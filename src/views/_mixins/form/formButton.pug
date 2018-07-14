@@ -1,0 +1,12 @@
+mixin button(text)
+    #{attributes.href ? 'a' : 'button'}.form-request__button.btn(
+        href=attributes.href 
+        type=attributes.type
+        class=attributes.class 
+        id=attributes.id 
+        form=attributes.form
+    )= text
+        span.line1.btn-border-line
+        span.line2.btn-border-line
+        span.line3.btn-border-line
+        span.line4.btn-border-line

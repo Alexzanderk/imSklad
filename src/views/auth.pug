@@ -1,0 +1,24 @@
+extends _layout
+
+block main
+    section.section-auth
+        .container.auth-grid__lv2
+            .bg-blur
+
+            form.form-login(action="", method="post")
+                h1.form__title Login or if you have't account 
+                    a.form__link(href="registration.html") registration
+                +input()(type='email' placeholder='Email')
+                +input()(type='password' placeholder='Password')
+                +button('Login')(type='submit')
+                span.span or
+                +socials([
+                        {title: 'facebook',
+                        link: '#',
+                        ico: 'fab fa-facebook-f'},
+                        {title: 'google',
+                        link: '#',
+                        ico: 'fab fa-google'},
+                        {title: 'git',
+                        link: '#',
+                        ico: 'fab fa-github'}])

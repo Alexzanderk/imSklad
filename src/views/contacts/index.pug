@@ -1,0 +1,32 @@
+extends _layout
+
+ 
+
+block content
+    
+   
+    include ../_includes/carousel
+   
+    h1.h1-main-content.h1-main-content_contacts Контакты
+    p.p-contacts Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus facere, tenetur reprehenderit, voluptatem fuga quis quae at, iusto numquam possimus quo quidem esse magnam.
+
+    address.address-container
+        .work-address
+            .address__street
+                h4.address__street_h4 Адрес:
+                a.address__link(href="geo:50.490606, 30.412595") г.Киев ул. Северо-Сырецкая 1-3г оф.216
+        .work-time
+            h4.work-time-h4 Время работы:
+            p.work-time-span понедельник - пятница с 9.00 до 17.00
+            p.work-time-span суббота - воскресенье: выходные
+
+        .work-phones
+            h4.work-phones_h4 Тел:
+            a.address__link(href="tel:+380674302151") +38 067 430 21 51
+            h4.work-phones_h4.span Тел:
+            a.address__link(href="tel:+380442321483") +38 044 232 14 83
+        .work-email
+            h4.work-email_h4 Почта:
+            a.address__link(href="mailto:rm1f6@ukrservice.biz") rm1f6@ukrservice.biz
+
+    #map

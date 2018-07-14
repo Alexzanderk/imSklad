@@ -1,0 +1,14 @@
+extends _layout
+
+ 
+
+block content
+    
+   
+    include ../_includes/carousel
+
+    +btn('Вернуться назад')(href='javascript:history.back()' class='margin')
+   
+    +news(newsList[0])
+    
+

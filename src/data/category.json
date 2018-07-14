@@ -1,0 +1,48 @@
+[
+    {
+        "categoryName": "Rokla",
+        "products": [
+            {
+                "title": "Rokla",
+                "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum magni fugit vitae tempore dolorum? Nemo consequatur laborum dolorem voluptatem labore iste ipsam consequuntur libero sequi officia obcaecati, facilis numquam architecto aut sunt. Reiciendis, eos quibusdam. Sapiente, numquam inventore, ducimus ex ab provident veniam architecto qui ad facere beatae totam. Excepturi, nisi. Sequi voluptatibus adipisci consequatur quos ullam dolorum unde quo nulla, sed debitis, quas, non veritatis dicta explicabo numquam voluptatum molestiae cum hic placeat neque? Tenetur vel itaque aut enim aperiam asperiores temporibus quas omnis labore iure, dignissimos quam eum nobis eveniet quod officia voluptate minima explicabo facilis, nisi nulla assumenda. Nostrum facilis reprehenderit ex deserunt dolorum ut at quis quod excepturi, minus earum, eaque, nesciunt asperiores ad quaerat itaque labore repellat id blanditiis doloremque consequatur nam placeat. Cumque, nisi ratione! Earum ipsam dolore eveniet ducimus, dolor autem ad eligendi consequatur omnis animi odit doloribus eaque debitis, sunt ratione assumenda officia necessitatibus iste porro. Cumque repellat corporis hic distinctio blanditiis veniam perspiciatis, inventore iste vitae nostrum a eveniet rem laboriosam nulla nihil velit iure iusto, laborum numquam quisquam minima. Ut doloribus, illum sed iste at et ipsa minima ex dolorum, harum error a voluptatum inventore repudiandae minus ab autem, expedita sit tempora dignissimos mollitia? Aliquam dignissimos odit sequi inventore dicta, tempora quibusdam eaque, eveniet, exercitationem consequatur ipsa beatae odio aperiam ad deserunt asperiores distinctio unde nihil. Numquam veniam libero nam laudantium consequuntur repellendus excepturi. Hic quas error debitis quibusdam sunt neque dolores ratione modi rem, molestias reiciendis, sapiente esse! Atque neque dolorum ullam molestias expedita!",
+                "price": 6200,
+                "article": "92022",
+                "model": "SYP-2000",
+                "imege": "http://lorempixel.com/640/480/nature",
+                
+                "settings": [
+                    {
+                        "name": "capacity",
+                        "value": 2000,
+                        "icon": ""
+                    },
+                    {
+                        "name": "fork",
+                        "value": 2000,
+                        "icon": ""
+                    },
+                    {
+                        "name": "iusto tempora et",
+                        "value": 2000,
+                        "icon": ""
+                    },
+                    {
+                        "name": "quos nesciunt consequatur",
+                        "value": 2000,
+                        "icon": ""
+                    },
+                    {
+                        "name": "saepe dolorem atque",
+                        "value": 2000,
+                        "icon": ""
+                    },
+                    {
+                        "name": "eos ut ut",
+                        "value": 2000,
+                        "icon": ""
+                    },
+                ],
+            }
+        ]
+    }
+]

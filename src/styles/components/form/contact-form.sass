@@ -1,0 +1,247 @@
+.contact-form
+    max-width: 380px
+    max-height: 400px
+    background: rgba(#000, .75)
+    color: #fff
+    padding: 15px
+    display: flex
+    flex-flow: column
+
+.form-title
+
+.form
+    overflow: hidden
+    display: flex
+    flex-flow: column
+    width: 100%
+
+.form-request__input
+    display: flex
+    flex-flow: column
+    flex: 1
+    margin: 15px 0
+    position: relative
+    z-index: 1
+    width: 100%
+    vertical-align: top
+
+.input__field
+    position: relative
+    display: block
+    float: right
+    padding: 0.8em
+    border: none
+    border-radius: 0
+    background: #f0f0f0
+    color: #aaa
+    font-weight: 400
+    font-size: 14px
+
+.input__field:focus
+    outline: none
+
+.input__label
+    display: inline-block
+    float: right
+    padding: 0 1em
+    color: #696969
+    font-weight: bold
+    font-size: 70.25%
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+
+.input__label-content
+    position: relative
+    display: block
+    padding: 1.6em 0
+    width: 100%
+
+.form-request__input
+    overflow: hidden
+
+.form-request__input_effect
+    overflow: hidden
+
+.input__field_effect
+    background: transparent
+    padding: 0.8em
+    margin-bottom: 2em
+    color: #f5d31d
+    z-index: 1000
+    opacity: 0   
+
+    
+.input__label_effect
+    width: 100%
+    position: absolute
+    text-align: left
+    padding: 0.5em 0
+    pointer-events: none
+    font-size: 1em
+    &:before, &:after
+        content: ''
+        position: absolute
+        width: 100%
+        left: 0
+    &:before
+        height: 100%
+        width: 100%
+        background: #A8A8A8
+        background: rgba(#222222, .8)
+        top: 0
+        transform: translate3d(0, -100%, 0)
+        transition: transform 0.2s
+    &:after
+        height: 2px
+        background: #A8A8A8
+        background: #888
+        background: #f5d31d
+        top: 100%
+        transition: opacity 0.2s
+
+.input__label-content_effect
+    padding: 0
+    transform-origin: 0 0
+    transition: transform 0.2s, color 0.2s
+
+.input__field_effect:focus,
+.input--filled .input__field_effect
+    opacity: 1
+    transition: opacity 0s 0.2s
+
+.input__label:before,
+.input__label:after,
+.input__label-content_effect,
+.input__field_effect:focus,
+.input--filled .input__field_effect
+    transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1)
+
+.input__field_effect:focus + .input__label_effect::before,
+.input--filled .input__label_effect::before
+    transform: translate3d(0, 0, 0)
+
+.input__field_effect:focus + .input__label_effect::after,
+.input--filled .input__label_effect::after 
+    opacity: 0
+
+.input__field_effect:focus + .input__label_effect .input__label-content_effect,
+.input--filled .input__label_effect .input__label-content_effect 
+    color: #cbc4c6
+    color: #cbc4c6
+    font-weight: 500
+    transform: translate3d(0, 2em, 0) scale3d(0.65, 0.65, 1)
+
+.form-request__button
+    margin-top: 10px
+    padding: 15px
+    color: #fff
+    text-transform: uppercase
+    font-size: 18px
+    font-weight: 500
+    letter-spacing: .8px
+    background-color: inherit
+    border: 1px solid #fff
+    cursor: pointer
+    position: relative
+    &:focus
+        outline: none
+    &:hover
+        color: #f5d31d
+        border: 1px solid rgba(#fff, 0)
+        .line1
+            animation: move1 1500ms infinite ease
+        .line2
+            animation: move2 1500ms infinite ease
+        .line3
+            animation: move3 1500ms infinite ease
+        .line4
+            animation: move4 1500ms infinite ease
+.line1
+    content: ""
+    display: block
+    position: absolute
+    width: 1px
+    background-color: #f5d31d
+    left: 0
+    bottom: 0
+.line2
+    content: ""
+    display: block
+    position: absolute
+    height: 1px
+    background-color: #f5d31d
+    left: 0
+    top: 0
+.line3
+    content: ""
+    display: block
+    position: absolute
+    width: 1px
+    background-color: #f5d31d
+    right: 0
+    top: 0
+.line4
+    content: ""
+    display: block
+    position: absolute
+    height: 1px
+    background-color: #f5d31d
+    right: 0
+    bottom: 0
+
+
+@keyframes move1 
+    0% 
+        height: 100% 
+        bottom: 0
+    54% 
+        height: 0 
+        bottom: 100%
+    55% 
+        height: 0 
+        bottom: 0
+    100% 
+        height: 100% 
+        bottom: 0
+
+@keyframes move2 
+    0% 
+        width: 0
+        left: 0
+    50% 
+        width: 100% 
+        left: 0
+    100% 
+        width: 0 
+        left: 100%
+
+@keyframes move3 
+    0% 
+        height: 100% 
+        top: 0
+    54% 
+        height: 0 
+        top: 100%
+    55% 
+        height: 0 
+        top: 0
+    100% 
+        height: 100% 
+        top: 0
+
+@keyframes move4 
+    0% 
+        width: 0 
+        right: 0
+    55% 
+        width: 100% 
+        right: 0
+    100% 
+        width: 0 
+        right: 100%

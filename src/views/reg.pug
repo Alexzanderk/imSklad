@@ -1,0 +1,15 @@
+extends _layout
+
+block main
+    section.section-auth
+        .container.auth-grid__lv2
+            .bg-blur
+
+            form.form-login(action="", method="post")
+                h1.form__title If you have account, please 
+                    a.form__link(href="auth.html") Login
+                +input()(type='text' placeholder='Name')
+                +input()(type='email' placeholder='Email')
+                +input()(type='password' placeholder='Password')
+                +input()(type='password' placeholder='Confirm password')
+                +button('Registration')(type='submit')

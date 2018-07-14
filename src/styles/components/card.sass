@@ -1,0 +1,141 @@
+.card__link
+    text-decoration: none
+    display: block
+    width: 16.875em
+    height: 21.5625em
+    overflow: hidden
+    position: relative
+    background-color: #2f3238
+    z-index: 100
+    // margin: 10px    
+
+.card
+    position: relative
+    background-color: #2f3238
+
+.card_catalog
+.card__figure
+    margin: 0
+    padding: 0
+    
+.card__figure_catalog
+.card__figcaption
+    position: absolute
+    top: 10px
+    left: 10px
+    right: 0
+    bottom: 0
+    z-index: 5
+
+.card__figcaption_catalog
+.card__title
+    position: relative
+    color: #18171c
+    font-family: roboto
+    font-size: 18px
+    font-weight: 700
+    margin: 7px 0
+    
+.card__title_catalog
+.card__icon-list
+    display: flex
+    flex-flow: column
+    align-items: flex-start
+    position: relative
+    top: 10px
+    margin: 0
+    padding: 0
+    // display: grid
+    // grid-template-columns: 80%
+
+.card__icon-list_catalog
+.card__icon-item
+    position: relative
+    z-index: 5
+    display: inline-block
+    margin: 0 0 3px
+    padding: 5px 15px
+    background: rgba(#fff, 0.75)
+    color: #2f3238
+    text-transform: none
+    font-weight: 500
+    font-size: 14px
+    transition: opacity 0.35s, transform 0.35s
+    transform: translate3d(-360px,0,0)
+    display: flex
+    align-items: center
+    &:first-child
+        transition-delay: 0.40s
+    &:nth-child(2)
+        transition-delay: 0.30s
+    &:nth-child(3)
+        transition-delay: 0.2s
+    &:nth-child(4)
+        transition-delay: 0.1s
+
+.card:hover > .card__figure > .card__figcaption > .card__icon-list > .card__icon-item:first-child
+    transition-delay: 0.0s
+.card:hover>.card__figure>.card__figcaption>.card__icon-list>.card__icon-item:nth-child(2)
+    transition-delay: 0.05s
+.card:hover>.card__figure>.card__figcaption>.card__icon-list>.card__icon-item:nth-child(3)
+    transition-delay: 0.15s
+.card:hover>.card__figure>.card__figcaption>.card__icon-list>.card__icon-item:nth-child(4)
+    transition-delay: 0.2s
+.card:hover>.card__figure>.card__figcaption>.card__price
+    transition-delay: 0.25s
+
+.card:hover>.card__figure>.card__figcaption>.card__icon-list>.card__icon-item,
+.card:hover>.card__figure>.card__figcaption >.card__price
+    opacity: 1
+    transform: translate3d(0,0,0)
+
+.card:hover>.card__figure>.card__img-frame
+    opacity: 0.5
+    transform: scale3d(1.05,1.05,1)
+
+.card__icon-item_catalog
+.card__icon-span
+.card__icon-span_catalog
+.card__img-frame
+    width: 270px
+    height: 345px
+    background-color: #fff
+    display: flex
+    backface-visibility: hidden
+    transition: opacity 1s, transform 1s
+.card__img-frame_catalog
+.card__img
+    margin: auto
+    background-color: #fff
+    object-fit: contain
+    width: 101%
+    height: 101%
+    backface-visibility: hidden
+    transition: opacity 1s, transform 1s
+.card__img_catalog
+
+
+
+
+.product-catalog
+.product-catalog__list
+.product-catalog__item
+.card__link
+.card
+.card_catalog
+.card__figure
+.card__figure_catalog
+.card__figcaption
+.card__figcaption_catalog
+.card__title
+.card__title_catalog
+.card__icon-list
+.card__icon-list_catalog
+.card__icon-item
+.card__icon-item_catalog
+.card__icon-span
+.card__icon-span_catalog
+.card__img-frame
+.card__img-frame_catalog
+.card__img
+.card__img_catalog

@@ -1,0 +1,12 @@
+mixin menu(menuItems, className)
+    ul.menu__list(class=`${className}`)
+        each item in menuItems
+            li.menu__item
+                a.menu__link( href=`${item.link}`)&attributes(attributes)= item.name
++menu([
+    {link: 'news-feed.html', name: 'Новости'},
+    {link: 'catalog.html', name: 'Каталог'},
+    {link: 'about.html', name: 'О нас'},
+    {link: 'contacts.html', name: 'Контакты'},
+    {link: 'api.html', name: 'API'},
+    {link: 'auth.html', name: 'Login'}])

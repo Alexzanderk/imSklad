@@ -1,0 +1,180 @@
+//Level 1
+
+    
+// Level 2
+    // HOME PAGE
+.carousel
+    grid-area: slider
+
+.front-content
+    grid-area: main
+
+.contact-form
+    grid-area: contact
+    justify-self: center
+    justify-self: end
+
+.home-grid_lv2
+    padding: 10px 0
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-template-rows: auto
+    grid-gap: 1em
+    grid-template-areas: "slider slider slider slider slider slider slider slider slider slider slider slider" "main main main main main main main contact contact contact contact contact"
+
+    // CATALOG SECTION
+.catalog-grid_lv2
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-template-rows: auto
+    grid-gap: 1em
+    grid-template-areas: "leftSide leftSide leftSide mainContent  mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+
+
+.left-sidebar
+    grid-area: leftSide
+
+.main-content
+    grid-area: mainContent
+
+
+.catalog-grid_lv3
+    display: grid
+    grid-template-columns: repeat(3, 16.875em)
+    grid-gap: 10px
+    justify-content: center
+
+
+// FOOTER
+
+.footer-grid__lv2
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-template-rows: auto
+    grid-gap: 1em
+    grid-template-areas: "adr adr adr adr menu menu menu menu menu menu menu soc "
+
+
+.footer-contacts
+    grid-area: adr
+.footer-menu
+    grid-area: menu
+.footer-socials
+    grid-area: soc
+
+
+
+// AUTH
+
+.section-auth, .section-404
+    width: 100%
+    display: flex
+
+.auth-grid__lv2
+    margin: auto
+
+//AUTH LOGIN FORM
+.form-login
+    width: 100%
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-auto-rows: auto
+    .form__title
+        grid-column: 1/-1
+    .form-request__input
+        grid-column: 1/-1
+    .form-request__button
+        grid-column: 1/2
+        margin: 0
+    .span
+        grid-column: 2/3
+        place-self: center
+    .social__list
+        grid-column: -1/-2
+        place-self: center
+    
+//404
+
+.section-404
+.grid-404__lv2
+    min-width: 75%
+    margin: auto
+.container-404
+    display: flex
+    flex-flow: row wrap
+
+//NEWS FEED
+#news-feed
+#news-feed
+    .main-content
+        display: grid
+        grid-template-columns: 100%
+        grid-auto-rows: auto
+        grid-template-areas: "slider" "title" "news" "pagination"
+    .carousel
+        grid-area: slider
+    .h1-news-feed
+        grid-area: title
+    .news-feed__list
+        grid-area: news
+    .pagination
+        grid-area: pagination
+
+
+
+.news-feed__item
+    margin: 10px 0
+    display: grid
+    grid-gap: 5px
+    grid-template-columns: 1fr 4fr
+    grid-auto-rows: auto auto 2fr
+    grid-template-areas: "img date" "img title" "img desc"
+.date-container
+    grid-area: date
+    align-self: start
+    display: flex
+    align-content: center
+    align-items: center
+    margin-left: 5px
+.news-feed__link_img
+    grid-area: img
+.news-feed__link_title
+    grid-area: title
+.p-news-feed
+    grid-area: desc
+
+
+//NEWS
+
+.news-container
+    display: grid
+    grid-template-columns: 1fr 4fr
+    grid-auto-rows: auto 2fr
+    grid-gap: 10px
+    grid-template-areas: "img title" "img desc"
+.news-title
+    grid-area: title
+    margin: 0
+.news-description
+    margin: 0
+    grid-area: desc
+.news-img
+    grid-area: img
+
+// CONTACTS
+
+.address-container
+    display: grid
+    grid-template-columns: 100%
+    grid-auto-rows: auto
+    grid-gap: 10px
+    max-width: 50%
+.work-address
+.work-time
+.work-phones
+.work-email
+
+
+// #page-contacts .grid-contacts__lv2
+//     display: grid
+//     grid-template-columns: 100%

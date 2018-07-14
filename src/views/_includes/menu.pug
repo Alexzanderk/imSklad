@@ -1,0 +1,51 @@
+mixin menu(menuItems)
+    ul.menu__list&attributes(attributes)
+        each item in menuItems
+            li.menu__item
+                a.menu__link( href=`${item.link}`)= item.name
+mixin logo()
+    a(href="/" class="logo") Складская
+        span.logo_yellow Техника
+
+-let menus = [{link: 'news-feed.html', name: 'Новости'},{link: 'catalog.html', name: 'Каталог'},{link: 'about.html', name: 'О нас'},{link: 'contacts.html', name: 'Контакты'}]
+
+
+
+
+
+//- LOGO
+h2.logo_h2
+    +logo()
+
+//- Toggle menu phone
+
+
+//- Mobile menu
+aside#aside.mdc-drawer.mdc-drawer--temporary.mdc-typography
+    nav.mdc-drawer__drawer
+        header.mdc-drawer__header
+            .mdc-drawer__header-content
+                +logo()
+        nav#icon-with-text-demo.mdc-drawer__content.mdc-list
+            each item in menus
+                a.mdc-list-item(href=`${item.link}`)= item.name
+//- aside.mdc-drawer.mdc-drawer--temporary.mdc-typography.mdc-theme--dark#aside.mdc-drawer__drawer
+    nav.mdc-drawer__drawer
+        header.mdc-drawer__header
+            .mdc-drawer__header-content
+                +logo()
+        nav#icon-with-text-demo.mdc-drawer__content.mdc-list
+            each item in menus
+                a.mdc-list-item(href=`${item.link}`)= item.name
+                   
+
+//- Navigation
+nav.navbar-container
+    div.navbar
+        +menu([
+            {link: 'news-feed.html', name: 'Новости'},
+            {link: 'catalog.html', name: 'Каталог'},
+            {link: 'about.html', name: 'О нас'},
+            {link: 'contacts.html', name: 'Контакты'}])
+
+

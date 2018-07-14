@@ -1,0 +1,68 @@
+// The color that will be at the beginning and the end of the loop.
+// $firstColor: #0057B8;
+$firstColor: rgb(255, 208, 0);
+// The list of all the used colors. You can add or remove colors, the animation stays fluid. The $first-color must remain at the end of the list though.
+// $listColors: #F11E4A,
+// #237,
+// #229C79,
+// #F8A527,
+// #266D7F,
+// $firstColor;
+$listColors: 
+#fffb00,
+#ff9100,
+#ff0000,
+#0400ff,
+#48ff00, 
+$firstColor;
+$delayCoeff: 0.04s;
+.svg {
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+    line-height: 300px;
+    text-align: center; //   background-color: #FFF;
+    // background-color: rgba(#FFF, .2);
+    border-radius: 50%;
+}
+
+#svg {
+    display: inline-block;
+    vertical-align: middle;
+    fill: $firstColor;
+    @for $i from 1 through 58 {
+        path:nth-child(#{$i}) {
+            -webkit-animation: pweek 5s linear infinite;
+            animation: pweek 5s linear infinite;
+            -webkit-animation-delay: $i*$delayCoeff;
+            animation-delay: $i*$delayCoeff;
+            &:hover {
+                -webkit-animation-play-state: paused;
+                /* Chrome, Safari, Opera */
+                animation-play-state: paused;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes pweek {
+    0% {
+        fill: $firstColor;
+    }
+    @for $i from 1 through length($listColors) {
+        #{$i*(100/length($listColors))}% {
+            fill: nth($listColors, $i);
+        }
+    }
+}
+
+@keyframes pweek {
+    0% {
+        fill: $firstColor;
+    }
+    @for $i from 1 through length($listColors) {
+        #{$i*(100/length($listColors))}% {
+            fill: nth($listColors, $i);
+        }
+    }
+}
