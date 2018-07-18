@@ -3,15 +3,43 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const glob = require('glob').sync;
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
-module.exports = [{
+module.exports = [
+    {
+        entry: {
+            sprite: glob('./src/img/ico/*.svg')
+        },
+        output: {
+            path: path.resolve(__dirname, 'dist')
+        },
+        module: {
+            rules: [
+              {
+                test: /\.svg$/,
+                loader: 'svg-sprite-loader',
+                include: path.resolve(__dirname, 'src/img/ico'),
+                options: {
+                  extract: true,
+                  spriteFilename: 'ico.svg'
+                },
+              },
+            ],
+          },
+        
+          plugins: [
+            new SpriteLoaderPlugin()
+          ]
+    },
+    {
     entry: {
-        app: "./src/js/index.js",
+        app: './src/js/index.js',
         google: './src/js/functions/googleMaps.js'
     },
 
     output: {
-        filename: "[name].js"
+        filename: '[name].js'
     },
 
     module: {
@@ -70,53 +98,58 @@ module.exports = [{
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "src/views") + '/index.pug'
+            template: path.resolve(__dirname, 'src/views') + '/index.pug'
         }),
         new HtmlWebpackPlugin({
             filename: 'auth.html',
-            template: path.resolve(__dirname, "src/views") + '/auth.pug'
+            template: path.resolve(__dirname, 'src/views') + '/auth.pug'
         }),
         new HtmlWebpackPlugin({
             filename: 'registration.html',
-            template: path.resolve(__dirname, "src/views") + '/reg.pug'
+            template: path.resolve(__dirname, 'src/views') + '/reg.pug'
         }),
         new HtmlWebpackPlugin({
             filename: '404.html',
-            template: path.resolve(__dirname, "src/views") + '/404.pug'
+            template: path.resolve(__dirname, 'src/views') + '/404.pug'
         }),
         new HtmlWebpackPlugin({
             filename: 'catalog.html',
-            template: path.resolve(__dirname, "src/views", 'catalog') + '/index.pug'
+            template: path.resolve(__dirname, 'src/views', 'catalog') + '/index.pug'
         }),
-        // new HtmlWebpackPlugin({
-        //     filename: 'product.html',
-        //     template: path.resolve(__dirname, "src/views") + '/product.pug'
-        // }),
+        new HtmlWebpackPlugin({
+            filename: 'catalog-products.html',
+            template: path.resolve(__dirname, 'src/views', 'catalog-products') + '/index.pug'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'product.html',
+            template: path.resolve(__dirname, 'src/views', 'product') + '/index.pug'
+        }),
         new HtmlWebpackPlugin({
             filename: 'news-feed.html',
-            template: path.resolve(__dirname, "src/views", 'news-feed') + '/index.pug'
+            template: path.resolve(__dirname, 'src/views', 'news-feed') + '/index.pug'
         }),
         new HtmlWebpackPlugin({
             filename: 'news.html',
-            template: path.resolve(__dirname, "src/views", 'news') + '/index.pug'
+            template: path.resolve(__dirname, 'src/views', 'news') + '/index.pug'
         }),
         new HtmlWebpackPlugin({
             filename: 'about.html',
-            template: path.resolve(__dirname, "src/views", 'about') + '/index.pug'
+            template: path.resolve(__dirname, 'src/views', 'about') + '/index.pug'
         }),
         new HtmlWebpackPlugin({
             filename: 'contacts.html',
-            template: path.resolve(__dirname, "src/views", 'contacts') + '/index.pug'
+            template: path.resolve(__dirname, 'src/views', 'contacts') + '/index.pug'
         }),
     ],
 
     devtool: 'eval-source-map'
 },
+
 // {
-//     entry: "./src/styles/index.sass",
+//     entry: './src/styles/index.sass',
 
 //     output: {
-//         filename: "style-bundle.js"
+//         filename: 'style-bundle.js'
 //     },
 //     module: {
 //         rules: [{
