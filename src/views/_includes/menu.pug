@@ -7,9 +7,13 @@ mixin logo()
     a(href="/" class="logo") Складская
         span.logo_yellow Техника
 
--let menus = [{link: 'news-feed.html', name: 'Новости'},{link: 'catalog.html', name: 'Каталог'},{link: 'about.html', name: 'О нас'},{link: 'contacts.html', name: 'Контакты'}]
-
-
+-
+    let menus = [
+        {link: 'news-feed.html', name: 'Новости'},
+        {link: 'catalog.html', name: 'Каталог'},
+        {link: 'about.html', name: 'О нас'},
+        {link: 'contacts.html', name: 'Контакты'}
+    ]
 
 
 
@@ -29,23 +33,29 @@ aside#aside.mdc-drawer.mdc-drawer--temporary.mdc-typography
         nav#icon-with-text-demo.mdc-drawer__content.mdc-list
             each item in menus
                 a.mdc-list-item(href=`${item.link}`)= item.name
-//- aside.mdc-drawer.mdc-drawer--temporary.mdc-typography.mdc-theme--dark#aside.mdc-drawer__drawer
+        
+
+
+
+aside#sidebar.mdc-drawer.mdc-drawer--temporary.mdc-typography
     nav.mdc-drawer__drawer
-        header.mdc-drawer__header
-            .mdc-drawer__header-content
-                +logo()
-        nav#icon-with-text-demo.mdc-drawer__content.mdc-list
-            each item in menus
-                a.mdc-list-item(href=`${item.link}`)= item.name
+        .mdc-drawer__content
+            include ./aside-content.pug
+
                    
 
 //- Navigation
 nav.navbar-container
     div.navbar
-        +menu([
+        if id === 'admin'
+            +menu([
+            {link: 'admin-news.html', name: 'Новости'},
+            {link: 'admin-catalog.html', name: 'Каталог'},
+            {link: 'admin-company.html', name: 'Компания'},
+            {link: 'admin-clients.html', name: 'Database'}])
+        else
+            +menu([
             {link: 'news-feed.html', name: 'Новости'},
             {link: 'catalog.html', name: 'Каталог'},
             {link: 'about.html', name: 'О нас'},
             {link: 'contacts.html', name: 'Контакты'}])
-
-

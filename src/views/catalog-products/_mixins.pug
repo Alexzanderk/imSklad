@@ -16,11 +16,11 @@ mixin products(catalog)
 													name: 'capacity'
 												},
 												wFork: {
-													ico: '',
+													ico: 'ico-r-w',
 													name: 'width'
 												},
 												up: {
-													ico: '',
+													ico: 'ico-r-h',
 													name: 'height'
 												},
 												price: {
@@ -31,9 +31,14 @@ mixin products(catalog)
 												}
 										each params in product.settings
 											-for (key in icons)
-												if key === params.name
+												if key === params.name && icons[key].ico.slice(0,3) === 'fas'
 													li.card__icon-item.card__icon-item_catalog
-														i(class=`${icons[key].ico}`)
+														i(class=`${icons[key].ico} ico_fa`)
+														span.card__icon-span.card__icon-span_catalog= `${params.value}`
+												else if key === params.name && icons[key].ico.slice(0,3) !== 'fas'
+													li.card__icon-item.card__icon-item_catalog
+														svg(class=`ico_svg card__icon`)
+															use(xlink:href=`./src/img/ico.svg#${icons[key].ico}`)
 														span.card__icon-span.card__icon-span_catalog= `${params.value}`
 								div(class=`card__img-frame card__img-frame_catalog`)
 									img(class=`card__img card__img_catalog` src=`${product.image}` alt=`${product.title}`)

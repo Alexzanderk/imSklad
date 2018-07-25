@@ -66,10 +66,15 @@
 // Main content
 .main-content
     margin-bottom: 25px
+    
 
 .h3__main-content
     font-size: 20px
+    
 .p__main-content
     font-size: 14px
     line-height: 1.25
 
+.h3__main-content, .p__main-content
+    +breakpoint($phone)
+        padding: 0 10px

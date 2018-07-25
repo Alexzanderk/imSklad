@@ -14,6 +14,10 @@
 	overflow: hidden;
 	position: relative;
 	box-sizing: border-box;
+	@include breakpoint($phone) {
+		height: 6em
+	}
+	
 }
 
 	.b-carousel__prev,
@@ -50,6 +54,9 @@
 		height: 100%;
 		height: 17.5em; // Carousel height 
 		width: 100%;
+		@include breakpoint($phone) {
+			height: 10em
+		}
 	}
 
 		.b-carousel__item {
@@ -61,6 +68,9 @@
 			background-color: #fff;
 			width: 100%;
 			height: 17.5em;
+			@include breakpoint($phone) {
+				height: 6em
+			}
 		}
 
 			.b-carousel__img {

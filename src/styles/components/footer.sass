@@ -2,6 +2,8 @@
     background-color: #3c3b3d
     color: #aaa
     padding: 20px 0
+    // +breakpoint($phone)
+
 .footer-contacts
     .address
         font-size: 14px
@@ -16,6 +18,8 @@
 
     .address__link
         color: #bbb
+    +breakpoint($phone)
+        margin: auto
 
 .footer-menu
     .menu__list
@@ -32,12 +36,21 @@
             margin-left: auto
         &:last-child
             margin-right: 0
+    .menu__item--admin
+        &:nth-last-child(2)
+            margin-left: 0
+        &:last-child
+            margin-right: auto
 
     .menu__link
         color: #bbb
         text-decoration: none
         font-size: 16px
         font-weight: 400
+    +breakpoint($phone)
+        display: none
+
+
 .footer-socials
     .social__list
         padding: 0
@@ -45,6 +58,8 @@
         list-style: none
         display: flex
         justify-content: flex-end
+        +breakpoint($phone)
+            justify-content: center
     .social__item
         margin-left: 10px
         &:first-child

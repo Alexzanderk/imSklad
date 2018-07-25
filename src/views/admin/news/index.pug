@@ -1,0 +1,30 @@
+extends ../_layout/_layout
+ 
+
+block content
+    h1 Новости
+
+    .btn-controls
+        +btn('Add news')(href='#')
+        +btn('List news')(href='#')
+        +btn('Preview news')(href='#')
+    
+    table.admin-table
+        thead.thead
+            tr.tr
+                th.th #
+                th.th Новость
+                th.th Опубликовано
+                th.th Действие
+                
+        tbody.tbody
+            tr.tr
+                td.td 1
+                td.td Какая то новость
+                td.td нет
+                td.td 
+                    +btn('Изменить')
+                    +btn('Удалить')
+
+
+    

@@ -1,9 +1,110 @@
 extends _layout
-
  
 
 block content
-    +products(categories)
+
+    -
+        //- console.log(products)
+        let product = products[0]
+        let image = './src/img/truckLift.jpg'
+
+    .product.product-grid
+
+        .product-img-frame
+            img.product-img(src=image, alt="", srcset="")
+        .product-info
+            h1.product-title= product.title
+            .product-meta
+                ul.product-meta__list
+                    li.product-meta__item Model: 
+                        a.product-meta__link(href="#")= product.model
+                    li.product-meta__item Category: 
+                        a.product-meta__link(href="#")= product.category
+                    li.product-meta__item Brand: 
+                        a.product-meta__link(href="#")= product.brand
+            
+            
+            .product-action
+                h3.price= product.price
+                    span.currency UAH
+            
+                .quick-contacts
+                    ul.quick-contacts__list
+                        li.quick-contacts__item Заказ по телефону
+                        li.quick-contacts__item
+                            i.fas.fa-phone-square
+                            a.quick-contacts__link(href="tel:+380674302151") 38 067 430 21 51
+                        //- li.quick-contacts__item
+                            i.far.fa-envelope
+                            a.quick-contacts__link(href="mailto:rm1f6@ukrservice.biz") rm1f6@ukrservice.biz
+            
+            .product-options
+                .delivery 
+                    ul.delivery__list 
+                        li.delivery__item Доставка:
+                        li.delivery__item Доставка по г.Киев бесплатная;
+                        li.delivery__item Oтправка любым перевозчиком по всей Украине;
+                        li.delivery__item Самовывоз со склада г.Киев, г.Винница
+                .pay
+                    ul.pay__list
+                        li.pay__item Оплата:
+                        li.pay__item Оплата по безалу
+                        li.pay__item Оплата наличными через банк
+                        li.pay__item Оплата Прива24
 
 
-    
+
+        .nav-tabs
+            
+            ul.nav-tabs__list
+                li(data-tab='1').nav-tabs__items.nav-tabs__items--active
+                    a.nav-tabs__link(href="#") Характкристики
+                li(data-tab='2').nav-tabs__items
+                    a.nav-tabs__link(href="#") Описание
+                li(data-tab='3').nav-tabs__items
+                    a.nav-tabs__link(href="#") Преимущества
+            
+            ul.tabs__list
+                li(data-list='1').tabs__item.tabs__item--active
+                    table.product-props
+                        thead.product-table__thead
+                            tr.tr.thead__tr
+                                th.th.thead__th Свойство
+                                th.th.thead__th Значение 
+                        tbody.product-table__tbody
+                            each element in product.properties
+                                tr.tr.tbody__tr
+                                    td.td.tbody__td= element.name
+                                    td.td.tbody__td= element.value
+                li(data-list='2').tabs__item
+                    .product-description !{product.description}
+                
+                li(data-list='3').tabs__item
+                    .product-description !{product.description}
+
+
+        
+    //- .product.product-grid
+        .product-info
+            h1.product-title= product.title
+            .product-meta
+                .model Модель:
+                    span.model= product.model
+                .category Категория:
+                    a().category= (product.category === 'palletTruck') ? 'Гидравлические тележки' : false
+        .product__img
+            img.img(src=`${image}`, alt="", srcset="" height='400px')
+        table.product-table
+            thead.product-table__thead
+                tr.tr.thead__tr
+                    th.th.thead__th Свойство
+                    th.th.thead__th Значение 
+            tbody.product-table__tbody
+                each element in product.properties
+                    tr.tbody__tr
+                     td.tbody__td= element.name
+                     td.tbody__td= element.value
+                tr.tbody__tr
+                    td.tbody__td Price
+                    td.tbody__td= product.price
+        .product__description !{product.description}
