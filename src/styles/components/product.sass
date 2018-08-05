@@ -43,6 +43,8 @@
     font-weight: 800
     letter-spacing: 1px
     font-size: 22px
+    +breakpoint($phone)
+        margin: 10px 0
 .currency
     font-size: 18px
     padding-left: 10px
@@ -92,39 +94,7 @@
 .pay__item
     @extend .delivery__item
 
-
-
-.nav-tabs
-    margin: 15px 0
-.nav-tabs__list
-    display: flex
-.nav-tabs__items
-    box-sizing: border-box
-    display: block
-.nav-tabs__items--active
-    border-bottom: 4px solid darken(#f7cd78, 15%)
-    margin-bottom: -2px
-    background: #555
-    &>.nav-tabs__link
-        color: darken(#f7cd78, 15%)
-.nav-tabs__link
-    padding: 10px
-    display: block
-    text-decoration: none
-    color: #000
-
-
-
-
-.tabs__list
-    border-top: 2px solid #ccc
-    padding: 15px 
-                
-.tabs__item
-    display: none
-.tabs__item--active
-    display: block
-    
+ 
 .product-props
     border-collapse: collapse
     width: 100%

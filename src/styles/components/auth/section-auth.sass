@@ -11,7 +11,7 @@
     left: -25px
     right: -25px
     filter: blur(10px)
-    z-index: -1
+    z-index: 1
     background: linear-gradient(to bottom, rgba(0,0,0, .9) 0%, rgba(0,0,0, .3) 30%, rgba(#fff, 0) 100%), url("../img/bg_lift_truck.jpg")
     background-repeat: no-repeat
     background-size: cover
@@ -20,9 +20,23 @@
 .form-login
     background: rgba(#000, .65)
     padding: 25px
-    // margin: auto
+    position: relative
+    z-index: 2
+    +breakpoint($phone)
+        box-sizing: border-box
+        padding: 5px
+        margin: 0
+    .form-request__input
+        margin: 0
     .form__title
         color: #fff
+        +breakpoint($phone)
+            font-size: 22px
+            text-align: center
+    .form__p
+        color: #dddddd
+        font-size: 14px
+        text-align: center
     .form__link
         color: #f5d31d
         &:hover
@@ -52,4 +66,5 @@
         color: #fff
         font-size: 20px
         margin: auto
+        margin: 10px 0
 

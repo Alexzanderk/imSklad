@@ -1,0 +1,15 @@
+extends ../_layout/_layout
+
+block content
+    form.form(method="post")#adminNewsList
+        fieldset.fieldset
+            legend.legend Создание новости
+            +input('title')(type='text' name='title' placeholder='Название новости')
+            +textarea('description')(type='textarea' rows=5 placeholder='Краткое описание')
+            +textarea('fullDescription')(type='textarea' rows=20 placeholder='Полное описание')
+            +input()(type='date')
+            +input('Опубликовано')(type='checkbox' class='checkbox' placeholder='Опубликовано' id='checkbox-published')
+            .btn-controls
+                +btn('Создать')(type='submit')
+                +btn('Назад')(href='javascript:history.back()')
+                +btn('Сбросить')(type='reset')

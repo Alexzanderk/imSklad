@@ -52,9 +52,13 @@ html(lang="ru")
                         //- i.far.fa-arrow-alt-circle-up
       
       
-        block ontop
-            .on-top
-                a(href="#").on-top__link
-                    i.far.fa-arrow-alt-circle-up
+        block fixedButton
+            .fixed-button
+                if id === 'auth' || id === 'reg'
+                    a(href="/").home__link
+                        i.fas.fa-home
+                else
+                    a(href="#").on-top__link
+                        i.far.fa-arrow-alt-circle-up
 
 

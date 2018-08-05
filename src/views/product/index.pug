@@ -82,29 +82,3 @@ block content
                 li(data-list='3').tabs__item
                     .product-description !{product.description}
 
-
-        
-    //- .product.product-grid
-        .product-info
-            h1.product-title= product.title
-            .product-meta
-                .model Модель:
-                    span.model= product.model
-                .category Категория:
-                    a().category= (product.category === 'palletTruck') ? 'Гидравлические тележки' : false
-        .product__img
-            img.img(src=`${image}`, alt="", srcset="" height='400px')
-        table.product-table
-            thead.product-table__thead
-                tr.tr.thead__tr
-                    th.th.thead__th Свойство
-                    th.th.thead__th Значение 
-            tbody.product-table__tbody
-                each element in product.properties
-                    tr.tbody__tr
-                     td.tbody__td= element.name
-                     td.tbody__td= element.value
-                tr.tbody__tr
-                    td.tbody__td Price
-                    td.tbody__td= product.price
-        .product__description !{product.description}

@@ -1,0 +1,85 @@
+.tabs__list
+.tabs__item[data-list='1'].tabs__item--active
+    .form-create-product-grid
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(75px, 1fr))
+        grid-column-gap: 5px
+        +breakpoint($phone)
+
+        .form-row
+            &:nth-child(1)
+                grid-column: 1 / span 3
+                grid-row: 1 / span 4
+                    
+            &:nth-child(2)
+                grid-column: span 4
+            &:nth-child(3)
+                grid-column: span 4
+                grid-row: 2/auto
+            &:nth-child(4)
+                grid-column: span 4
+                grid-row: 3 / auto
+
+            &:nth-child(5)
+                grid-column: span 3 / -1
+                grid-row: auto
+            &:nth-child(6)
+                grid-column: span 3 / -1
+                grid-row: auto
+            &:nth-child(7)
+                grid-column: span 3 / -1
+                grid-row: auto
+            &:nth-child(8)
+                grid-column: 1 / span 3
+                grid-row: auto
+            &:nth-child(9)
+                grid-column: 1 / span 3
+                grid-row: auto
+            +breakpoint($phone)
+                &:nth-child(1)
+                    grid-column: 1 / auto
+                    grid-row: auto 
+                &:nth-child(2)
+                    grid-column: 1 / auto
+                    grid-row: auto 
+                &:nth-child(3)
+                    grid-column: 1 / auto 
+                    grid-row: auto
+                &:nth-child(4)
+                    grid-column: 1 / auto
+                    grid-row: auto 
+                &:nth-child(5)
+                    grid-column: 1 / auto
+                    grid-row: auto 
+                &:nth-child(6)
+                    grid-column: 1 / auto 
+                    grid-row: auto 
+                &:nth-child(7)
+                    grid-column: 1 / auto 
+                    grid-row: auto 
+                &:nth-child(8)
+                    grid-column: 1 / auto 
+                    grid-row: auto 
+                &:nth-child(9)
+                    grid-column: 1 / auto
+                    grid-row: auto 
+        .product-actions
+            grid-column: span 3 / -1
+            grid-row: 4 / 7
+            +breakpoint($phone)
+                grid-column: 1 / auto
+                grid-row: auto 
+        .form-row--file
+            .label-name
+            .input--file
+        .form-row--select
+    
+.input[type='file']
+.input[type='name']
+.input[type='model']
+.input[type='article']
+.select[type='category']
+.input[type='price']
+.input[type='priceDollar']
+.input[type='currency']
+.input[type='file']

@@ -1,0 +1,8 @@
+mixin categoryList(elements)
+    .ad-category
+        ul.ad-category__list
+            each element in elements
+                li.ad-category__items
+                    .title= element.categoryName
+                    a(href="#").ad-category__link.ad-category__link--delete
+                        i.far.fa-trash-alt.ico-delete

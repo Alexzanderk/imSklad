@@ -1,8 +1,57 @@
-a.btn
-    display: block
-    text-decoration: none
-    font-weight: 800
-    text-transform: uppercase
+.btn-controls
+    display: flex
+    flex-flow: row wrap
+    +breakpoint($phone)
+        flex-flow: column
+    .btn
+        text-decoration: none
+        background: none
+        border: none
+        font-size: 15px
+        cursor: pointer
+        text-transform: uppercase
+        margin: 10px
+        padding: 10px
+        background: #555
+        font-weight: 500
+        display: block
+        color: #fff
+        color: #f7cd78
+        outline: none
+        text-align: center
+        +breakpoint($phone)
+            margin: 5px 10px
+        &:hover
+            background: darken(#555, 10%)
+        &:first-child
+            margin-left: 0
+            +breakpoint($phone)
+                margin-left: 10px
+    
+form, .form
+    .btn-controls
+        .btn
+            color: #fff
+            color: #f7cd78
+            color: #555
+            border: 2px solid #555
+            background: transparent
+            &:hover
+                background: #555
+                color: #fff
+            &[type='submit']:hover
+                border-bottom: 2px solid green
+            &[href="javascript:history.back()"]:hover
+                border-bottom: 2px solid red
+            &:hover
+                border-bottom: 2px solid darken(#f7cd78, 20%)
 
-a.btn.margin
-    margin: 15px 0
+
+.fieldset
+    .legend
+    // .btn-controls
+    //     .btn
+    //         margin: 0
+    //         margin-right: 10px
+    //         &:last-child
+    //             margin-right: 0

@@ -6,12 +6,15 @@ import Slider from './slider';
 import { NavTabs } from './functions/nav-tabs';
 
 
+if (document.querySelector('#aside') && document.querySelector('#sidebar')) {
 
-const menu = new drawer.MDCTemporaryDrawer(document.querySelector('#aside'));
-document.querySelector('.menu').addEventListener('click', () => menu.open = true);
-
-const sidebar = new drawer.MDCTemporaryDrawer(document.querySelector('#sidebar'));
-document.querySelector('.sidebar').addEventListener('click', () => sidebar.open = true);
+    const menu = new drawer.MDCTemporaryDrawer(document.querySelector('#aside'));
+    document.querySelector('.menu').addEventListener('click', () => menu.open = true);
+    
+    const sidebar = new drawer.MDCTemporaryDrawer(document.querySelector('#sidebar'));
+    document.querySelector('.sidebar').addEventListener('click', () => sidebar.open = true);
+    
+}
 
 if (document.querySelector('.js-carousel')) {
     const slider = new Slider({

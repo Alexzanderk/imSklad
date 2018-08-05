@@ -7,13 +7,28 @@ mixin logo()
     a(href="/" class="logo") Складская
         span.logo_yellow Техника
 
+
+
 -
-    let menus = [
-        {link: 'news-feed.html', name: 'Новости'},
-        {link: 'catalog.html', name: 'Каталог'},
-        {link: 'about.html', name: 'О нас'},
-        {link: 'contacts.html', name: 'Контакты'}
-    ]
+    let menus = {
+        admin: [
+            {link: 'admin-news.html', name: 'Новости'},
+            {link: 'admin-catalog.html', name: 'Каталог'},
+            {link: 'admin-company.html', name: 'Компания'},
+            {link: 'admin-clients.html', name: 'Database'},
+            {link: 'auth.html', name: 'Вход'}
+        ],
+        main: [
+            {link: 'news-feed.html', name: 'Новости'},
+            {link: 'catalog.html', name: 'Каталог'},
+            {link: 'about.html', name: 'О нас'},
+            {link: 'contacts.html', name: 'Контакты'}
+        ],
+        aside: [
+            {link: 'auth.html', name: 'Вход'},
+            {link: 'api.html', name: 'API'}
+        ]
+    }
 
 
 
@@ -31,12 +46,18 @@ aside#aside.mdc-drawer.mdc-drawer--temporary.mdc-typography
             .mdc-drawer__header-content
                 +logo()
         nav#icon-with-text-demo.mdc-drawer__content.mdc-list
-            each item in menus
-                a.mdc-list-item(href=`${item.link}`)= item.name
-        
+            if id === 'admin'
+                each item in menus.admin
+                    a.mdc-list-item(href=`${item.link}`)= item.name
+            else
+                each item in menus.main
+                    a.mdc-list-item(href=`${item.link}`)= item.name
+                each item in menus.aside
+                    a.mdc-list-item(href=`${item.link}`)= item.name
 
 
 
+//- Mobile sidebar
 aside#sidebar.mdc-drawer.mdc-drawer--temporary.mdc-typography
     nav.mdc-drawer__drawer
         .mdc-drawer__content
@@ -48,14 +69,6 @@ aside#sidebar.mdc-drawer.mdc-drawer--temporary.mdc-typography
 nav.navbar-container
     div.navbar
         if id === 'admin'
-            +menu([
-            {link: 'admin-news.html', name: 'Новости'},
-            {link: 'admin-catalog.html', name: 'Каталог'},
-            {link: 'admin-company.html', name: 'Компания'},
-            {link: 'admin-clients.html', name: 'Database'}])
+            +menu(menus.admin)
         else
-            +menu([
-            {link: 'news-feed.html', name: 'Новости'},
-            {link: 'catalog.html', name: 'Каталог'},
-            {link: 'about.html', name: 'О нас'},
-            {link: 'contacts.html', name: 'Контакты'}])
+            +menu(menus.main)

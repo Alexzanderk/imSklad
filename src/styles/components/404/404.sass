@@ -10,15 +10,28 @@
 
 .svg
 .content-404
+    +breakpoint($phone)
+        display: flex
+        flex-flow: column
     
 .h1-404
     color: #fff
     font-size: 45px
+    +breakpoint($phone)
+        text-align: center
+        color: #f5d31d
+        margin: 10px 0
 
 .h2-404
     color: #fff
-
+    +breakpoint($phone)
+        text-align: center
+        margin: 10px 0
 .link-404
     color: #fff
+    +breakpoint($phone)
+        text-align: center
+        margin: 10px auto
+        color: #f5d31d
     &:hover
         color: #f5d31d

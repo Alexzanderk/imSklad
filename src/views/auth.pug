@@ -1,15 +1,18 @@
 extends _layout
 
 block main
+    - id = 'auth';
+    
     section.section-auth
         .container.auth-grid__lv2
             .bg-blur
 
-            form.form-login(action="", method="post")
-                h1.form__title Login or if you have't account 
-                    a.form__link(href="registration.html") registration
-                +input()(type='email' placeholder='Email')
-                +input()(type='password' placeholder='Password')
+
+            form.form-login.form-request(action="", method="post")
+                h1.form__title Вход в аккаунт 
+                    //- a.form__link(href="registration.html") зарегестрируйтесь
+                +input()(type='email' placeholder='Email' data-effects=true)
+                +input()(type='password' placeholder='Пароль' data-effects=true)
                 +button('Login')(type='submit')
                 span.span or
                 +socials([
@@ -22,3 +25,5 @@ block main
                         {title: 'git',
                         link: '#',
                         ico: 'fab fa-github'}])
+                p.form__p Если у Вас нет аккаунта  
+                    a.form__link(href="registration.html") зарегестрируйтесь    

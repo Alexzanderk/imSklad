@@ -1,0 +1,36 @@
+.nav-tabs
+    margin: 15px 0
+.nav-tabs__list
+    display: flex
+    +breakpoint($phone)
+        flex-flow: column
+.nav-tabs__items
+    box-sizing: border-box
+    display: block
+    +breakpoint($phone)
+        background: #eeeeee
+.nav-tabs__items--active
+    border-bottom: 4px solid darken(#f7cd78, 15%)
+    margin-bottom: -2px
+    background: #555
+    &>.nav-tabs__link
+        color: darken(#f7cd78, 15%)
+.nav-tabs__link
+    padding: 10px
+    display: block
+    text-decoration: none
+    color: #000
+    +breakpoint($phone)
+        text-align: center
+
+
+    
+.tabs__list
+    border-top: 2px solid #ccc
+    padding: 15px 
+                
+.tabs__item
+    display: none
+.tabs__item--active
+    display: block
+    

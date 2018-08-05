@@ -1,0 +1,46 @@
+.props
+    width: 100%
+.props__list
+    padding: 0
+    margin: 0
+    list-style: none
+    margin-right: 20px
+    margin: auto
+.props__item
+    position: relative
+    border-bottom: 1px solid #555
+    +breakpoint($phone)
+        width: 100%
+    &:hover .props__link--delete
+        display: block
+
+
+
+    .form-row
+    .row__label
+        display: none
+    .input
+        +breakpoint($phone)
+            width: 100%
+            max-width: 100%
+        &[name='name']
+            max-width: 175px
+            +breakpoint($phone)
+                max-width: 100%
+        &[name='title']
+        &[name='unit']
+            max-width: 100px
+            +breakpoint($phone)
+                max-width: 100%
+
+    .props__link
+    .props__link--delete
+        position: absolute
+        right: 0px
+        top: 50%
+        transform: translateY(-50%)
+        display: none
+        padding: 3px
+        font-size: 20px
+        +breakpoint($phone)
+            display: block

@@ -1,5 +1,40 @@
-mixin input()
-    span.form-request__input.form-request__input_effect
-        input.input__field.input__field_effect&attributes(attributes)
-        label.input__label.input__label_effect(for=attributes.id)
-            span.input__label-content.input__label-content_effect= attributes.placeholder
+mixin input(name, value)
+    if attributes['data-effects']
+        span.form-request__input.form-request__input_effect
+            input.input__field.input__field_effect&attributes(attributes)
+            label.input__label.input__label_effect(for='')
+                span.input__label-content.input__label-content_effect= attributes.placeholder
+
+
+    else if attributes.type === 'checkbox'
+        span.form-row.form-row--checkbox
+            input.input(name=name value=value)&attributes(attributes)
+            label.row__label(for=attributes.id)
+                i.fas.fa-minus-square
+                i.fas.fa-plus-square
+            span.label-name= attributes.placeholder
+
+    else if attributes.type === 'date'
+        span.form-row.form-row--date(class=attributes.class)
+            label.row__label(for=attributes.id) Дата публикации:
+            input.input.input--date(name=name value=value)&attributes(attributes)
+   
+
+
+
+   
+    else if attributes.type === 'file'
+        span.form-row.form-row--file(class=attributes.class)
+            p.label-name #{ value ? 'Фото' : (attributes.accept === '.pdf') ? 'Загрузить файл:' : 'Загрузить фото:'}
+            input.input.input--file(name=name value=value)&attributes(attributes)
+            label.row__label.row__label--file(class=(value ? 'row__label--photo' : '') for=attributes.id) #{ value ? '' : (attributes.accept === '.pdf') ? 'Загрузить файл' : 'Загрузить фото'}
+                if value
+                    img.ad-product-img(src=image  alt=""  srcset="")
+
+
+  
+    else
+        span.form-row(class=attributes.class)
+            if attributes.placeholder && !attributes.hidden
+                label.row__label(for=attributes.id)= `${attributes.placeholder}:`
+            input.input(name=name value=value)&attributes(attributes)
