@@ -19,57 +19,64 @@ module.exports = [{
 
         module: {
             rules: [{
-                test: /\.js$/,
-                use: {
-                    loader: 'babel-loader',
-                    query: {
-                        presets: ['es2015']
+                    test: /\.js$/,
+                    use: {
+                        loader: 'babel-loader',
+                        query: {
+                            presets: ['es2015']
+                        }
                     }
-                }
-            }, {
-                test: /\.pug$/,
-                use: {
-                    loader: 'pug-loader',
-                    options: {
-                        pretty: true
+                }, {
+                    test: /\.pug$/,
+                    use: {
+                        loader: 'pug-loader',
+                        options: {
+                            pretty: true
+                        }
                     }
-                }
-            }, {
-                test: /\.s[ca]ss$/,
-                use: [{
+                }, {
+                    test: /\.s[ca]ss$/,
+                    use: [
+                        // {
+                        //     loader: 'file-loader',
+                        //     options: {
+                        //         name: 'bundle.css',
+                        //     },
+                        // },
+                        // {
+                        //     loader: 'extract-loader'
+                        // },
+                        {
+                            loader: 'style-loader'
+                        },
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                includePaths: ['./node_modules'],
+                                sourceMap: true
+                            }
+                        },
+                    ]
+                },
+                {
+                    test: /\.(png|jpg|svg)$/,
+                    use: [{
                         loader: 'file-loader',
-                        options: { name: 'bundle.css',},
-                    },
-                    {
-                        loader: 'extract-loader'
-                    },
-                    {
-                        loader: 'css-loader',
                         options: {
-                            // sourceMap: true`
+                            name: '[name].[ext]',
+                            outputPath: './public/img/',
+                            emitFile: true,
+                            useRelativePath: true
                         }
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            includePaths: ['./node_modules'],
-                            sourceMap: true
-                        }
-                    },
-                ]
-            },
-            {
-                test: /\.(png|jpg|svg)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: './public/img/',
-                        emitFile: true,
-                        useRelativePath: true
-                    }
-                }]
-            }, ],
+                    }]
+                },
+            ],
         },
 
         plugins: [
@@ -136,9 +143,32 @@ module.exports = [{
                 filename: 'admin-catalog.html',
                 template: path.resolve(__dirname, 'src/views', 'admin/catalog') + '/index.pug'
             }),
+            new HtmlWebpackPlugin({
+                filename: 'admin-edit.html',
+                template: path.resolve(__dirname, 'src/views', 'admin/news') + '/form.pug'
+            }),
+            new HtmlWebpackPlugin({
+                filename: 'admin-delete.html',
+                template: path.resolve(__dirname, 'src/views', 'admin/news') + '/delete.pug'
+            }),
+            new HtmlWebpackPlugin({
+                filename: 'admin-create.html',
+                template: path.resolve(__dirname, 'src/views', 'admin/news') + '/form.pug'
+            }),
+            new HtmlWebpackPlugin({
+                filename: 'admin-create-product.html',
+                template: path.resolve(__dirname, 'src/views', 'admin/catalog') + '/form.pug'
+            }),
+            new HtmlWebpackPlugin({
+                filename: 'admin-create-props.html',
+                template: path.resolve(__dirname, 'src/views', 'admin/catalog') + '/form-props.pug'
+            }),
+            new HtmlWebpackPlugin({
+                filename: 'admin-create-category.html',
+                template: path.resolve(__dirname, 'src/views', 'admin/catalog') + '/form-category.pug'
+            }),
         ],
 
         devtool: 'eval-source-map'
     },
-
 ];
