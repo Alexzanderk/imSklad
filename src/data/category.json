@@ -2,6 +2,25 @@
     {
         "categoryName": "Rokla",
         "categoryImage": "./src/img/truckLift.jpg",
+        "props": [
+            {
+                "title": "производительность",
+                "unit": "kg",
+                "bdName": "capacity"
+            },{
+                "title": "длина вил",
+                "unit": "mm",
+                "bdName": "widthFork"
+            },{
+                "title": "ширина вил",
+                "unit": "mm",
+                "bdName": "depthFork"
+            },{
+                "title": "Вес",
+                "unit": "kg",
+                "bdName": "weigth"
+            }
+        ],
         "products": [
             {
                 "title": "Rokla",
@@ -371,7 +390,7 @@
         ]
     },
     {
-        "categoryName": "Rokla",
+        "categoryName": "Shtab",
         "categoryImage": "./src/img/hand-stacker-vulkan.jpg",
         "products": [
             {
@@ -742,7 +761,7 @@
         ]
     },
     {
-        "categoryName": "Rokla",
+        "categoryName": "Stol",
         "categoryImage": "./src/img/1.jpg",
         "products": [
             {
@@ -1113,7 +1132,7 @@
         ]
     },
     {
-        "categoryName": "Rokla",
+        "categoryName": "Electro shtab",
         "categoryImage": "./src/img/2.jpg",
         "products": [
             {
@@ -1484,7 +1503,7 @@
         ]
     },
     {
-        "categoryName": "Rokla",
+        "categoryName": "Wheels",
         "categoryImage": "./src/img/_4.png",
         "products": [
             {
@@ -1855,7 +1874,7 @@
         ]
     },
     {
-        "categoryName": "Rokla",
+        "categoryName": "ZIP",
         "categoryImage": "./src/img/PTN200.jpg",
         "products": [
             {

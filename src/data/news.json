@@ -5,8 +5,8 @@
         "link": "news.html",
         "img": "./src/img/1.jpg",
         "alt": "pic",
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe."
-
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe.",
+        "published": false
     },
     {
         "title": "Новое поступление товара уже на складе!",
@@ -14,7 +14,8 @@
         "link": "news.html",
         "img": "./src/img/_2.png",
         "alt": "pic",
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe."
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe.",
+        "published": true
 
     },
     {
@@ -23,7 +24,8 @@
         "link": "news.html",
         "img": "./src/img/2.jpg",
         "alt": "pic",
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe."
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe.",
+        "published": true
 
     },
     {
@@ -32,7 +34,18 @@
         "link": "news.html",
         "img": "./src/img/3.jpg",
         "alt": "pic",
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe."
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe.",
+        "published": true
+
+    },
+    {
+        "title": "Акция!!! ТОЛЬКО НЕДЕЛЯ!!!!",
+        "date": "25.06.18",
+        "link": "news.html",
+        "img": "./src/img/3.jpg",
+        "alt": "pic",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe.",
+        "published": false
 
     }
 ]
