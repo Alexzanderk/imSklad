@@ -1,28 +1,31 @@
 {
-  "name": "webpack3.12.0",
+  "name": "im-sklad",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "svg": "webpack --config webpack.svg.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alexzanderk",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-es2015": "^6.24.1",
     "breakpoint-sass": "^2.7.1",
+    "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^0.28.11",
+    "dotenv": "^6.0.0",
     "extract-loader": "^2.0.1",
     "file-loader": "^1.1.11",
     "glob": "^7.1.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.0",
+    "nodemon": "^1.18.3",
     "pug-html-loader": "^1.1.5",
     "pug-loader": "^2.4.0",
     "raw-loader": "^0.5.1",
@@ -30,10 +33,14 @@
     "style-loader": "^0.21.0",
     "svg-sprite-loader": "^3.8.0",
     "webpack": "^3.12.0",
-    "webpack-dev-server": "^2.11.2"
+    "webpack-dev-server": "^2.11.2",
+    "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "express": "^4.16.3",
     "material-components-web": "^0.36.0",
+    "mongodb": "^3.1.1",
+    "mongoose": "^5.2.6",
     "pug": "^2.0.3",
     "tiny-slider": "^2.7.2"
   }
