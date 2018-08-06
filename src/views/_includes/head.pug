@@ -19,9 +19,11 @@ link(rel="stylesheet", href="bundle.css")
 
 
 //-Google maps
-script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDh2FS9_k84QkJbdwrSSXVdCeC_JwytW0k' defer)
+script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDh2FS9_k84QkJbdwrSSXVdCeC_JwytW0k' async)
 if id === 'main-page' || 'page-contacts'
-    script(src='/google.js' defer)
+    script(src='/public/js/google.js' async)
+
+script(type='text/javascript', src='/public/js/app.js' async)
 
 
 script(src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js")
