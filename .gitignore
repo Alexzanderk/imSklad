@@ -1,6 +1,9 @@
 # Dependency directories
 node_modules/
 jspm_packages/
+public/img/ico/
+public/img/bg/
+public/img/icons/
 
 # dotenv environment variables file
 .env
