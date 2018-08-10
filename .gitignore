@@ -4,6 +4,7 @@ jspm_packages/
 public/img/ico/
 public/img/bg/
 public/img/icons/
+main/views/admin/
 
 # dotenv environment variables file
 .env
