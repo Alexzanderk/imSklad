@@ -1,0 +1,29 @@
+extends _layout
+
+block main
+    - id = 'auth';
+    
+    section.section-auth
+        .container.auth-grid__lv2
+            .bg-blur
+
+
+            form.form-login.form-request(action="", method="post")
+                h1.form__title Вход в аккаунт 
+                    //- a.form__link(href="registration.html") зарегестрируйтесь
+                +input()(type='email' placeholder='Email' data-effects=true)
+                +input()(type='password' placeholder='Пароль' data-effects=true)
+                +button('Login')(type='submit')
+                span.span or
+                +socials([
+                        {title: 'facebook',
+                        link: '#',
+                        ico: 'fab fa-facebook-f'},
+                        {title: 'google',
+                        link: '#',
+                        ico: 'fab fa-google'},
+                        {title: 'git',
+                        link: '#',
+                        ico: 'fab fa-github'}])
+                p.form__p Если у Вас нет аккаунта  
+                    a.form__link(href="registration.html") зарегестрируйтесь    

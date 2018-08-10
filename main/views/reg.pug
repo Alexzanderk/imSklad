@@ -1,0 +1,19 @@
+extends _layout
+
+block main
+    - id = 'reg';
+    section.section-auth
+        .container.auth-grid__lv2
+            .bg-blur
+            
+            form.form-login.form-request(action="", method="post")
+
+                h1.form__title Регистрация аккаунта
+                    //- a.form__link(href="auth.html") Login
+                +input()(type='text' placeholder='Имя' data-effects=true)
+                +input()(type='email' placeholder='Email' data-effects=true)
+                +input()(type='password' placeholder='Пароль' data-effects=true)
+                +input()(type='password' placeholder='Подтверждение пароля' data-effects=true)
+                +button('Регистрация')(type='submit')
+                p.form__p Если у вас есть аккаунт, пожалуйста, 
+                    a.form__link(href="auth.html") войдите

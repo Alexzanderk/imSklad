@@ -1,0 +1,14 @@
+include ../_mixins/index
+include ./_mixins.pug
+
+//- -
+    let vulkan = require('./../../data/vulkan.json');
+    let products = [];
+    vulkan.forEach(el => {
+        if (el.category === 'palletTruck') {products.push(el)} 
+    });
+
+    //- console.log(products)
+
+
+include ../_includes/__layout

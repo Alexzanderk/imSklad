@@ -1,0 +1,74 @@
+mixin menu(menuItems)
+    ul.menu__list&attributes(attributes)
+        each item in menuItems
+            li.menu__item
+                a.menu__link( href=`${item.link}`)= item.name
+mixin logo()
+    a(href="/" class="logo") Складская
+        span.logo_yellow Техника
+
+
+
+-
+    let menus = {
+        admin: [
+            {link: '/admin-news', name: 'Новости'},
+            {link: '/admin-catalog', name: 'Каталог'},
+            {link: '/admin-company', name: 'Компания'},
+            {link: '/admin-clients', name: 'Database'},
+            {link: '/auth', name: 'Вход'}
+        ],
+        main: [
+            {link: '/news-feed', name: 'Новости'},
+            {link: '/catalog', name: 'Каталог'},
+            {link: '/about', name: 'О нас'},
+            {link: '/contacts', name: 'Контакты'}
+        ],
+        aside: [
+            {link: '/auth', name: 'Вход'},
+            {link: '/api', name: 'API'}
+        ]
+    }
+
+
+
+//- LOGO
+h2.logo_h2
+    +logo()
+
+//- Toggle menu phone
+
+
+//- Mobile menu
+aside#aside.mdc-drawer.mdc-drawer--temporary.mdc-typography
+    nav.mdc-drawer__drawer
+        header.mdc-drawer__header
+            .mdc-drawer__header-content
+                +logo()
+        nav#icon-with-text-demo.mdc-drawer__content.mdc-list
+            if id === 'admin'
+                each item in menus.admin
+                    a.mdc-list-item(href=`${item.link}`)= item.name
+            else
+                each item in menus.main
+                    a.mdc-list-item(href=`${item.link}`)= item.name
+                each item in menus.aside
+                    a.mdc-list-item(href=`${item.link}`)= item.name
+
+
+
+//- Mobile sidebar
+aside#sidebar.mdc-drawer.mdc-drawer--temporary.mdc-typography
+    nav.mdc-drawer__drawer
+        .mdc-drawer__content
+            include ./aside-content.pug
+
+                   
+
+//- Navigation
+nav.navbar-container
+    div.navbar
+        if id === 'admin'
+            +menu(menus.admin)
+        else
+            +menu(menus.main)

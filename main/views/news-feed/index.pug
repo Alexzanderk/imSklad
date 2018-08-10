@@ -1,0 +1,15 @@
+extends _layout
+
+ 
+
+block content
+    
+   
+    include ../_includes/carousel
+   
+    h1.h1-news-feed.h1-main-content  Новости
+    
+    +news-list(newsList)
+
+    +pagination(80, 10, 4)
+

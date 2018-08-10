@@ -1,0 +1,5 @@
+mixin news(news)
+    .news-container
+        h1.h1-main-content.news-title= news.title
+        p.news-description= news.description
+        img.news-img(src=`${news.img}`)
