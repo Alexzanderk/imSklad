@@ -1,0 +1,37 @@
+extends ../_layout/_layout
+ 
+
+block content
+    h1.admin-title Каталог
+
+    .nav-tabs
+        
+        ul.nav-tabs__list
+            li(data-tab='1').nav-tabs__items.nav-tabs__items--active
+                a.nav-tabs__link(href="#") Продукты
+            li(data-tab='2').nav-tabs__items
+                a.nav-tabs__link(href="#") Категории и свойства 
+            li(data-tab='3').nav-tabs__items
+                a.nav-tabs__link(href="#") Параметры свойств
+        
+        ul.tabs__list
+
+            li(data-list='1').tabs__item.tabs__item--active
+                .btn-controls
+                    +btn('Добавить продукт')(href='admin-create-product.html')
+
+            li(data-list='2').tabs__item
+                .btn-controls
+                    +btn('Добавить категорию')(href='admin-create-category.html')
+                +categoryPropsList(categories)
+                    
+            li(data-list='3').tabs__item
+                form.form(method="post")#adminUnitList
+                    .group-form
+                        .btn-controls
+                            +btn('Добавить')(type='submit' id=btnUnitSave)
+                        +input('unit')(type='text' placeholder='Добавить ед.измерения')
+                    .group-form
+                        +select('unitList', ['mm', 't', 'kg', 'C', 'Ah', 'V', 'A'])(multiple placeholder='Добавленные ед.измерения' class='form-row--select' size=10)
+                        .btn-controls
+                            +btn('Удалить')(type='submit' id=btnUnitDelete)

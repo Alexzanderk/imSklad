@@ -1,0 +1,22 @@
+mixin(title, )
+
+.contact-form
+    h3.form-title= title
+    form.form.form-request(action='' name='' id='')
+        span.form-request__input.form-request__input_effect
+            input.input__field.input__field_effect(type='text' id='' name='')
+            label.input__label.input__label_effect(for='')
+                span.input__label-content.input__label-content_effect Ваше имя
+        span.form-request__input.form-request__input_effect
+            input.input__field.input__field_effect(type='tel' id='' name='')
+            label.input__label.input__label_effect(for='')
+                span.input__label-content.input__label-content_effect Контактный телефон
+        span.form-request__input.form-request__input_effect
+            input.input__field.input__field_effect(type='email' id='' name='')
+            label.input__label.input__label_effect(for='')
+                span.input__label-content.input__label-content_effect Электронная почта
+        button(type='submit').form-request__button Отправить
+            span.line1.btn-border-line
+            span.line2.btn-border-line
+            span.line3.btn-border-line
+            span.line4.btn-border-line

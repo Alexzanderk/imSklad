@@ -1,15 +1,24 @@
-include ./_mixins/index
-
 doctype html
 html(lang="ru")
-    head
-        include ./_includes/head
+    head    
+        include ./head
     
 
     body(id=`${id}-page` class=className)
+        
         block main
-            section.section
+        
+            include ./header
 
+            
+            section.section.layout
+                .container.catalog-grid_lv2
+                    include ./aside
+
+                    section.main-content
+                        block content
+
+        
         block footer
             footer.footer
                 .container.footer-grid__lv2
@@ -25,7 +34,7 @@ html(lang="ru")
                                 span.span Почта:     
                                 a.address__link(href="mailto:rm1f6@ukrservice.biz") rm1f6@ukrservice.biz
                     .footer-menu
-                        include ./_includes/footer-menu
+                        include ./footer-menu
 
                     .footer-socials
                         +socials([
@@ -38,6 +47,11 @@ html(lang="ru")
                             {title: 'git',
                             link: '#',
                             ico: 'fab fa-github-square'}])
+                        //- i.fab.fa-facebook-square
+                        //- i.fab.fa-google-plus-square
+                        //- i.fab.fa-github-square
+                        //- i.fas.fa-dolly-flatbed
+                        //- i.far.fa-arrow-alt-circle-up
       
       
         block fixedButton

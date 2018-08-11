@@ -1,0 +1,17 @@
+extends ../_layout/_layout
+
+//-newsList
+
+
+block content
+    h1.admin-title Новости
+
+    .btn-controls
+        +btn('Add news')(href='admin-create.html')
+        +btn('List news')(href='#')
+        +btn('Preview news')(href='#')
+
+
+    +table({newsfeed: newsList})
+
+    +pagination(180, 10, 2)

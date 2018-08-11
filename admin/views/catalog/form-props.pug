@@ -1,0 +1,23 @@
+extends ../_layout/_layout
+
+block content
+    h1.admin-title Создание свойств категории
+
+    form.form(method="post")#adminCategoryProps
+        fieldset.fieldset
+            legend.legend= categories[0].categoryName
+            .btn-controls
+                +btn('Добавть строку')(href='#')
+                +btn('Удалить все строки')(href='#')
+                +btn('Сбросить все')(type='reset')
+            .props
+                ul.props__list
+                    li.props__item
+                        +input('name')(type='text' placeholder='name - имя поля для bd')
+                        +input('title')(type='text' placeholder='title - название свойства для таблицы')
+                        +input('unit')(type='text' placeholder='ед.измерения')
+                        a(href="#").props__link.props__link--delete 
+                            i.far.fa-trash-alt.ico-delete
+            .btn-controls
+                +btn('Сохранить')(type='submit')
+                +btn('Назад')(href='javascript:history.back()')
