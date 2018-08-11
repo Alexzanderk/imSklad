@@ -5,9 +5,9 @@ mixin news-list(newsList)
                 .date-container
                     i.far.fa-calendar-alt
                     .news-feed__date= news.date
-                a.news-feed__link.news-feed__link_img(href=`${news.link}`)
+                a.news-feed__link.news-feed__link_img(href=`/news-feed/${news.id}`)
                     img.news-feed__img(src=`${news.img}`, alt=`${news.alt}`)
-                a.news-feed__link.news-feed__link_title(href=`${news.link}`)
+                a.news-feed__link.news-feed__link_title(href=`/news-feed/${news.id}`)
                     h3.h3-news-feed= news.title
                 p.p-news-feed= news.description
 
