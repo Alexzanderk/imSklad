@@ -15,8 +15,9 @@ main.on('mount', server => {
     main.locals = Object.assign(server.locals, main.locals);
 });
 
-main.use('/', routers.home);
+main.use('/', routers.main);
+// main.use('/auth', routers.auth);
+main.use('/news-feed', routers.news);
 main.use('/catalog', routers.catalog);
-// main.use('/news', routers.news);
 
 module.exports = main;

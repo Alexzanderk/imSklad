@@ -7,8 +7,6 @@ vulkan.forEach(el => {
     if (el.category === 'palletTruck') {products.push(el)} 
 });
 
-console.log(products);
-
 module.exports = {
 
     //GET /catalog
