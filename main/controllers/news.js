@@ -1,5 +1,5 @@
-const newsList = require('../data/news.json');
-const categories = require('../data/category.json');
+const newsList = require('../../shared/data/news.json');
+const categories = require('../../shared/data/category.json');
 
 module.exports = {
     //GET /news-feed

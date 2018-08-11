@@ -1,12 +1,13 @@
 const express = require('express');
 const path = require('path');
 
+// const middleware = require('./middleware');
 const routers = require('./routers');
 
 const main = express();
 
-const newsList = require('./data/news.json');
-const categories = require('./data/category.json');
+// const newsList = require('./data/news.json');
+// const categories = require('./data/category.json');
 
 main.set('views', path.resolve(__dirname, 'views'));
 main.set('view engine', 'pug');

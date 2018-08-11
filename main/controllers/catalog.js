@@ -1,7 +1,7 @@
-const newsList = require('../data/news.json');
-const categories = require('../data/category.json');
+const newsList = require('../../shared/data/news.json');
+const categories = require('../../shared/data/category.json');
 
-const vulkan = require('../data/vulkan.json');
+const vulkan = require('../../shared/data/vulkan.json');
 let products = [];
 vulkan.forEach(el => {
     if (el.category === 'palletTruck') {products.push(el)} 
@@ -21,7 +21,7 @@ module.exports = {
     //GET /:category
     showCategoryProducts(req, res) {
         res.render('category-products', {
-            id: 'catalog',
+            id: 'category',
             category: req.params.categoryId,
             newsList,
             categories

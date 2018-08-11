@@ -1,5 +1,5 @@
-const newsList = require('../data/news.json');
-const categories = require('../data/category.json');
+const newsList = require('../../shared/data/news.json');
+const categories = require('../../shared/data/category.json');
 
 module.exports = {
 
@@ -7,7 +7,7 @@ module.exports = {
     showProductsAndNews(req, res) {
         
         res.render('index', {
-            id: 'main-page',
+            id: 'main',
             newsList,
             categories
         });
