@@ -1,4 +1,4 @@
-export class NavTabs {
+export default class NavTabs {
     constructor(element) {
         this.tab = document.querySelector(element);
         this.buttons = this.tab.querySelectorAll('.nav-tabs__link');
