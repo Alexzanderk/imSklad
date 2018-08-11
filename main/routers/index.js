@@ -1,5 +1,6 @@
 module.exports = {
-    home: require('./home-page'),
+    main: require('./main'),
     catalog: require('./catalog'),
-    news: require('./news')
+    news: require('./news'),
+    auth: require('./auth')
 };

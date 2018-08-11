@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const loger = require('morgan');
 
-const config = require('./config');
+const config = require('./shared/config');
 
 const main = require('./main');
 
@@ -18,4 +18,4 @@ server.use(express.static(config.paths.public));
 
 server.use('/', main);
 
-server.listen(3000,() => console.log('Start server on port 3000'))
+server.listen(config.port,() => console.log(`Start server on port ${config.port}`));
