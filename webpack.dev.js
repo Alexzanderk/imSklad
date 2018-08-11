@@ -18,18 +18,18 @@ module.exports = merge(config, {
         }, {
             test: /\.s[ca]ss$/,
             use: [
-                {
-                    loader: 'file-loader',
-                    options: {
-                        name: 'bundle.css',
-                    },
-                },
-                {
-                    loader: 'extract-loader'
-                },
                 // {
-                //     loader: 'style-loader'
+                //     loader: 'file-loader',
+                //     options: {
+                //         name: 'bundle.css',
+                //     },
                 // },
+                // {
+                //     loader: 'extract-loader'
+                // },
+                {
+                    loader: 'style-loader'
+                },
                 {
                     loader: 'css-loader',
                     options: {

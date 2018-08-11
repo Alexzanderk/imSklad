@@ -27,7 +27,7 @@ module.exports = {
                         presets: ['es2015']
                     }
                 }
-            },{
+            }, {
                 test: /\.(png|jpg|svg)$/,
                 use: [{
                     loader: 'file-loader',
@@ -39,8 +39,37 @@ module.exports = {
                     }
                 }]
             },
-        ],
-    },
+            {
+                test: /\.s[ca]ss$/,
+                use: [{
+                        loader: 'file-loader',
+                        options: {
+                            name: 'app.css',
+                            outputPath: './public/style/'
+                        },
+                    },
+                    {
+                        loader: 'extract-loader'
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: 'resolve-url-loader'
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            includePaths: ['./node_modules'],
+                            sourceMap: true
+                        }
+                    },
+                ]
+            },
 
-    devtool: 'eval-source-map'
+        ]
+    }
 };
