@@ -4,6 +4,7 @@ import style from '../styles/index.sass'
 import { drawer } from 'material-components-web';
 import Slider from './slider';
 import { NavTabs } from './functions/nav-tabs';
+import ScrollTop from './functions/scrollTop.js';
 
 
 if (document.querySelector('#aside') && document.querySelector('#sidebar')) {
@@ -24,4 +25,5 @@ if (document.querySelector('.js-carousel')) {
         autoplayDelay: 3000
     });
 }
-if (document.querySelector('.nav-tabs')){ const navTab = new NavTabs('.nav-tabs') }
+if (document.querySelector('.nav-tabs')){ const navTab = new NavTabs('.nav-tabs') };
+if (document.querySelector('.on-top__link')) { const scrollTop = new ScrollTop('.on-top__link') };

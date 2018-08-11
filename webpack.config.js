@@ -15,7 +15,7 @@ module.exports = {
     },
 
     output: {
-        filename: './public/js/[name].js',
+        filename: './shared/public/js/[name].js',
     },
 
     module: {
@@ -33,7 +33,7 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                         name: '[name].[ext]',
-                        outputPath: './public/',
+                        outputPath: './shared/public/',
                         emitFile: true,
                         useRelativePath: true
                     }
@@ -45,7 +45,7 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: 'app.css',
-                            outputPath: './public/style/'
+                            outputPath: './shared/public/style/'
                         },
                     },
                     {
