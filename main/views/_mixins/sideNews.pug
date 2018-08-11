@@ -5,5 +5,5 @@ mixin sideNews(newsCatalog)
                 .side-news__date
                     i.material-icons.side-news__calendar calendar_today
                     span.span= news.date
-                a.side-news__link(href=`${news.link}`)= news.title
+                a.side-news__link(href=`/news-feed/${news.id}`)= news.title
                 .side-news__description= news.description

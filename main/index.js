@@ -16,7 +16,7 @@ main.on('mount', server => {
 });
 
 main.use('/', routers.main);
-// main.use('/auth', routers.auth);
+main.use('/auth', routers.auth);
 main.use('/news-feed', routers.news);
 main.use('/catalog', routers.catalog);
 
