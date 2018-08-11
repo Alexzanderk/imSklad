@@ -3,7 +3,7 @@ import { regexPolyfill } from './functions/regexPolyfillForm';
 import style from '../styles/index.sass'
 import { drawer } from 'material-components-web';
 import Slider from './slider';
-import { NavTabs } from './functions/nav-tabs';
+import NavTabs from './functions/nav-tabs';
 import ScrollTop from './functions/scrollTop.js';
 
 

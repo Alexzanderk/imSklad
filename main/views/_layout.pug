@@ -1,9 +1,10 @@
 include ./_mixins/index
+include /_mixins/index.pug
 
 doctype html
 html(lang="ru")
     head
-        include ./_includes/head
+        include /_includes/head
     
 
     body(id=`${id}-page` class=className)
@@ -25,7 +26,7 @@ html(lang="ru")
                                 span.span Почта:     
                                 a.address__link(href="mailto:rm1f6@ukrservice.biz") rm1f6@ukrservice.biz
                     .footer-menu
-                        include ./_includes/footer-menu
+                        include /_includes/footer-menu
 
                     .footer-socials
                         +socials([

@@ -5220,6 +5220,8 @@ var _slider2 = _interopRequireDefault(_slider);
 
 var _navTabs = __webpack_require__(129);
 
+var _navTabs2 = _interopRequireDefault(_navTabs);
+
 var _scrollTop = __webpack_require__(130);
 
 var _scrollTop2 = _interopRequireDefault(_scrollTop);
@@ -5248,7 +5250,7 @@ if (document.querySelector('.js-carousel')) {
     });
 }
 if (document.querySelector('.nav-tabs')) {
-    var navTab = new _navTabs.NavTabs('.nav-tabs');
+    var navTab = new _navTabs2.default('.nav-tabs');
 };
 if (document.querySelector('.on-top__link')) {
     var scrollTop = new _scrollTop2.default('.on-top__link');

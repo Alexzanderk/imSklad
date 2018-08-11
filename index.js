@@ -9,10 +9,7 @@ const admin = require('./admin');
 
 const server = express();
 
-server.disabled('view cache');
-server.set('views', './views')
-server.set('view engine', 'pug');
-
+server.locals.basedir = config.paths.viwes; //
 server.locals.version = config.version;
 
 server.use(express.static(config.paths.public));

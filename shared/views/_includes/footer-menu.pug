@@ -1,0 +1,23 @@
+mixin menu(menuItems, className)
+    ul.menu__list(class=`${className}`)
+        each item in menuItems
+            li.menu__item&attributes(attributes)
+                a.menu__link( href=`${item.link}`)= item.name
+
+
+if id === 'admin'
+    +menu([
+        {link: '/admin-news', name: 'Новости'},
+        {link: '/admin-catalog', name: 'Каталог'},
+        {link: '/admin-company', name: 'Компания'},
+        {link: '/admin-clients', name: 'Database'}])(class='menu__item--admin')
+else
+    +menu([
+    {link: '/news-feed', name: 'Новости'},
+    {link: '/catalog', name: 'Каталог'},
+    {link: '/about', name: 'О нас'},
+    {link: '/contacts', name: 'Контакты'},
+    {link: '/admin', name: 'Admin'},
+    {link: '/api', name: 'API'},
+    {link: '/auth/login', name: 'Login'}
+    ])
