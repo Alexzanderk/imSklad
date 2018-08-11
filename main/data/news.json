@@ -2,8 +2,8 @@
     {
         "title": "Акция на гидравлический штабелер 1016",
         "date": "25.06.18",
-        "link": "news.html",
-        "img": "img/1.jpg",
+        "id": 1,
+        "img": "/img/1.jpg",
         "alt": "pic",
         "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe.",
         "published": false
@@ -11,8 +11,8 @@
     {
         "title": "Новое поступление товара уже на складе!",
         "date": "25.06.18",
-        "link": "news.html",
-        "img": "img/_2.png",
+        "id": 2,
+        "img": "/img/_2.png",
         "alt": "pic",
         "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe.",
         "published": true
@@ -21,8 +21,8 @@
     {
         "title": "Акция!!! ТОЛЬКО НЕДЕЛЯ!!!!",
         "date": "25.06.18",
-        "link": "news.html",
-        "img": "img/2.jpg",
+        "id": 3,
+        "img": "/img/2.jpg",
         "alt": "pic",
         "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe.",
         "published": true
@@ -31,8 +31,8 @@
     {
         "title": "Акция!!! ТОЛЬКО НЕДЕЛЯ!!!!",
         "date": "25.06.18",
-        "link": "news.html",
-        "img": "img/3.jpg",
+        "id": 4,
+        "img": "/img/3.jpg",
         "alt": "pic",
         "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe.",
         "published": true
@@ -41,8 +41,8 @@
     {
         "title": "Акция!!! ТОЛЬКО НЕДЕЛЯ!!!!",
         "date": "25.06.18",
-        "link": "news.html",
-        "img": "img/3.jpg",
+        "id": 5,
+        "img": "/img/3.jpg",
         "alt": "pic",
         "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, voluptatem asperiores impedit ab sed minus expedita quisquam repellendus ducimus sit tenetur vitae eligendi corporis similique in magni aut beatae? Saepe.",
         "published": false
