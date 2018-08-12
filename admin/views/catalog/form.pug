@@ -1,7 +1,8 @@
 extends /_layout
+include ../_mixins/index.pug
 
 block content
-    - let image = './src/img/truckLift.jpg'
+    - let image = '/img/truckLift.jpg'
 
     h1.admin-title Создание продукта
     .form
@@ -39,9 +40,9 @@ block content
                         +input('priceDollar')(type='text' placeholder='Стоимость в валюте')
                         .product-actions
                             +input('price')(type='text' placeholder='Акционная цена')
-                            +input('price')(type='checkbox' placeholder='Топ продаж')
-                            +input('price')(type='checkbox' placeholder='Лучшее качество')
-                            +input('price')(type='checkbox' placeholder='Лучшая цена')
+                            +input('price')(type='checkbox' placeholder='Топ продаж' id='checkbox-top')
+                            +input('price')(type='checkbox' placeholder='Лучшее качество' id='checkbox-qualty')
+                            +input('price')(type='checkbox' placeholder='Лучшая цена' id='checkbox-price')
                     .form-group.form-create-product-grid
                         +input('file')(type='file' id='uploadimg' accept='.pdf')
 

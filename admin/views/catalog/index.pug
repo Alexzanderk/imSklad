@@ -1,5 +1,6 @@
 extends /_layout
- 
+
+include ../_mixins/index.pug
 
 block content
     h1.admin-title Каталог
@@ -18,11 +19,11 @@ block content
 
             li(data-list='1').tabs__item.tabs__item--active
                 .btn-controls
-                    +btn('Добавить продукт')(href='admin-create-product.html')
+                    +btn('Добавить продукт')(href='/admin/catalog/product/create')
 
             li(data-list='2').tabs__item
                 .btn-controls
-                    +btn('Добавить категорию')(href='admin-create-category.html')
+                    +btn('Добавить категорию')(href='/admin/catalog/category/create')
                 +categoryPropsList(categories)
                     
             li(data-list='3').tabs__item

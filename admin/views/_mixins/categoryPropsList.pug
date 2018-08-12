@@ -3,6 +3,6 @@ mixin categoryPropsList(categories)
         ul.categoty-props__list
             each category in categories
                 li.categoty-props__item
-                    a(href="admin-create-props.html").categoty-props__link= category.categoryName
+                    a(href="/admin/catalog/category/props").categoty-props__link= category.categoryName
                     p.p
                         small.small Кликнуть для изменения свойств категории

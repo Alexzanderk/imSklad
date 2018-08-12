@@ -63,7 +63,7 @@
                 border: none
                 transition: all .3s ease
             &:after
-                content: 'Заменить фото'
+                content: 'Добавить/Заменить'
                 position: absolute
                 top: 50%
                 left: 50%
@@ -116,18 +116,18 @@
             margin: 0
             display: block
         
-        .fa-minus-square
+        .fa-minus-square, .fa-square
             @extend %ico-checkbox
             color: red
-        .fa-plus-square
+        .fa-plus-square, .fa-check-square
             @extend %ico-checkbox
             display: none
             color: green
 
     .input[type='checkbox']:checked + .row__label
-        .fa-minus-square
+        .fa-minus-square, .fa-square
             display: none
-        .fa-plus-square
+        .fa-plus-square, .fa-check-square
             display: block
 
 

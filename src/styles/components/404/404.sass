@@ -5,11 +5,19 @@
 .bg-blur_404
     filter: grayscale(.6) blur(10px)
 .container-404
+    position: relative
+    z-index: 2
     padding: 20px
     background: rgba(#000, .7)
+.svg-404
+    // width: 100px
 
 .svg
+    // width: 250px
+    // height: 250px
 .content-404
+    margin: 10px
+    margin: auto
     +breakpoint($phone)
         display: flex
         flex-flow: column
@@ -17,6 +25,7 @@
 .h1-404
     color: #fff
     font-size: 45px
+    // margin: 10px 0
     +breakpoint($phone)
         text-align: center
         color: #f5d31d

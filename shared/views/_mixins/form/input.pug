@@ -10,8 +10,10 @@ mixin input(name, value)
         span.form-row.form-row--checkbox
             input.input(name=name value=value)&attributes(attributes)
             label.row__label(for=attributes.id)
-                i.fas.fa-minus-square
-                i.fas.fa-plus-square
+                //- i.fas.fa-minus-square
+                i.far.fa-square
+                //- i.fas.fa-plus-square
+                i.fas.fa-check-square
             span.label-name= attributes.placeholder
 
     else if attributes.type === 'date'
