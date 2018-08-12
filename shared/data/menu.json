@@ -1,0 +1,64 @@
+{
+    "main": [
+        {
+            "id": "news-feed",
+            "name": "Новости",
+            "link": "/news-feed"
+        },
+        {
+            "id": "catalog",
+            "name": "Каталог",
+            "link": "/catalog"
+        },
+        {
+            "id": "about",
+            "name": "О нас",
+            "link": "/about"
+        },
+        {
+            "id": "contacts",
+            "name": "Контакты",
+            "link": "/contacts"
+        }
+    ],
+    "admin": [
+        {
+            "id": "admin",
+            "name": "Admin",
+            "link": "/admin"
+        },
+        {
+            "id": "admin-news",
+            "name": "Новости",
+            "link": "/admin/news"
+        },
+        {
+            "id": "admin-catalog",
+            "name": "Каталог",
+            "link": "/admin/catalog"
+        },
+        {
+            "id": "admin-company",
+            "name": "Компания",
+            "link": "/admin/company"
+        },
+        {
+            "id": "admin-database",
+            "name": "Client",
+            "link": "/admin/database"
+        }
+    ],
+    "aside": [
+        {
+            "id": "api",
+            "name": "API",
+            "link": "/api"
+        },
+        {
+            "id": "login",
+            "name": "Вход",
+            "link": "/auth/login"
+        }
+    ]
+    
+}
