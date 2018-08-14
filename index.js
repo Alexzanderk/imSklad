@@ -21,6 +21,8 @@ server.locals.version = config.version;
 server.locals.menu = menu;
 
 server.use(express.static(config.paths.public));
+server.use(express.urlencoded({ extended: false }));
+server.use(express.json());
 server.use(loger('dev'));
 
 server.use('/', main);

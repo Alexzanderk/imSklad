@@ -14,5 +14,9 @@ admin.on('mount', server => {
 });
 
 admin.use('/', routers.home);
+admin.use('/news', routers.news);
+admin.use('/catalog', routers.catalog);
+admin.use('/company', routers.company);
+admin.use('/database', routers.client);
 
 module.exports = admin;
