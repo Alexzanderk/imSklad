@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "start": "nodemon -r dotenv/config index.js",
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "svg": "webpack --config webpack.svg.js",
-    "js": "webpack --watch --config webpack.config.js",
-    "express": "nodemon -r dotenv/config index.js"
+    "js": "webpack --watch --config webpack.config.js"
   },
   "keywords": [],
   "author": "Alexzanderk",
