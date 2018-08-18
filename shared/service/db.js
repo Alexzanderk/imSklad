@@ -4,7 +4,7 @@ const { mongodbUri } = require('../config');
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(mongodbUri);
+mongoose.connect(mongodbUri, { useNewUrlParser: true });
 
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error'));
 mongoose.connection.on('open', () => console.log('Connected to MongoDB'));
