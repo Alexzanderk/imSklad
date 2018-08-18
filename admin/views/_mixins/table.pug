@@ -1,5 +1,4 @@
 mixin table(elements)
-    //- -let {newsfeed, categories, products} = elements;
     -
         let thead = {
             news: ['#', 'Название', 'Опубликовано', 'Действие'],
@@ -7,7 +6,6 @@ mixin table(elements)
             product: ['', '', '', '']
         }
    
-    //- if newsfeed
     table.admin-table
         thead.thead
             tr.tr
@@ -15,7 +13,8 @@ mixin table(elements)
                     th.th= title
                 
         tbody.tbody
-            -let i = 0;
+            -let i = pagination.page * pagination.limit - pagination.limit;
+            
             each news in elements
                 - i += 1
                 tr.tr(class=(news.published) ? 'published' : 'unpublished')
@@ -23,22 +22,6 @@ mixin table(elements)
                     td.td.td-title= news.title
                     td.td.td-publish
                         i.status-ico(class=(news.published) ? 'far fa-check-square' : 'far fa-square')
-                    //- td.td.td-publish= (news.published) ? 'Да' : 'Нет'
                     td.td.td-controls
-                        +btn('Изменить')(href='/admin/news/edit' action='edit')
-                        +btn('Удалить')(href='/admin/news/delete' action='delete')
-//- if categories
-    table.admin-table
-        thead.thead
-            tr.tr
-                each title in thead.category
-                    th.th= title
-        tbody.tbody
-            -let i = 0;
-            each category in categories
-                -i += 1
-                -console.log(category)
-                tr.tr
-                    td.td.td-num= i
-                    td.td.td-title
-                        a(href="#")= category.categoryName
+                        +btn('Изменить')(href=`/admin/news/${news.id}/edit` action='edit')
+                        +btn('Удалить')(href=`/admin/news/delete` action='delete')

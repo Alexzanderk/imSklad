@@ -1,7 +1,7 @@
 mixin pagination(totalNewsCount, limit, currentPage, num)
     - let index = 0;
     - let pageRange = num || 2;
-    - let totalPages = totalNewsCount / limit;
+    - let totalPages = Math.ceil(totalNewsCount / limit);
     - let rangeStart = () => (currentPage - pageRange > 1) ? currentPage - pageRange : 1;
     - let rangeEnd = () => (currentPage + pageRange < totalPages) ? currentPage + pageRange : totalPages;
     - let hasFirst = rangeStart !== 1;
@@ -10,29 +10,29 @@ mixin pagination(totalNewsCount, limit, currentPage, num)
     if totalPages > 1
         ul.pagination
             li.pagination__item
-                a.pagination__link(href='#')
+                a.pagination__link(href=`/admin/news?page=1&limit=10`)
                     span.pagination__previous <
             if totalPages > 6 && rangeStart() > 1
                 li.pagination__item
-                    a.pagination__link(href='#') 1
+                    a.pagination__link(href=`/admin/news?page=1&limit=10`) 1
                 li.pagination__item
                     a.pagination__link(data-eclipdse='true' disabled href='#') ...
             if totalPages <= 6
                 -for(let index = 1; index <= totalPages; index +=1)
                     li.pagination__item
-                        a.pagination__link(href='#')= index
+                        a.pagination__link(href=`/admin/news?page=${index}&limit=10`)= index
             else                        
                 -for(let index = rangeStart(); index <= rangeEnd(); index +=1)
                     li.pagination__item
-                        a.pagination__link(href='#')= index
+                        a.pagination__link(href=`/admin/news?page=${index}&limit=10`)= index
             
             if totalPages>6 && hasLast
                 if rangeEnd() + 1 !== totalPages
                     li.pagination__item
                         a.pagination__link(data-eclipdse='true' disabled href='#') ...
                 li.pagination__item
-                    a.pagination__link(href='#')= totalPages
+                    a.pagination__link(href=`/admin/news?page=${totalPages}&limit=10`)= totalPages
             
             li.pagination__item
-                a.pagination__link(href='#')
+                a.pagination__link(href=`/admin/news?page=${totalPages}&limit=10`)
                     span.pagination__next >

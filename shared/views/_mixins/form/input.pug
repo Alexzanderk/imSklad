@@ -8,7 +8,7 @@ mixin input(name, value)
 
     else if attributes.type === 'checkbox'
         span.form-row.form-row--checkbox
-            input.input(name=name value=value)&attributes(attributes)
+            input.input(name=name checked=value)&attributes(attributes)
             label.row__label(for=attributes.id)
                 //- i.fas.fa-minus-square
                 i.far.fa-square
@@ -16,14 +16,12 @@ mixin input(name, value)
                 i.fas.fa-check-square
             span.label-name= attributes.placeholder
 
+
     else if attributes.type === 'date'
         span.form-row.form-row--date(class=attributes.class)
             label.row__label(for=attributes.id) Дата публикации:
             input.input.input--date(name=name value=value)&attributes(attributes)
    
-
-
-
    
     else if attributes.type === 'file'
         span.form-row.form-row--file(class=attributes.class)

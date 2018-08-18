@@ -6,9 +6,8 @@ block content
     h1.admin-title Новости
 
     .btn-controls
-        +btn('Add news')(href='/admin/news/edit')
+        +btn('Add news')(href='/admin/news/create')
 
-
-    +table(newsList)
-
-    +pagination(180, 10, 2)
+    +table(news)
+    
+    +pagination(allNews.length, pagination.limit, pagination.page, 2)

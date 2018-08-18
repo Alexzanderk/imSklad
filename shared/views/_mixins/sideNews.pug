@@ -1,9 +1,9 @@
-mixin sideNews(newsCatalog)
+mixin sideNews(newsList)
     ul.side-news__list
-        each news in newsCatalog
+        each news in newsList.slice(newsList.length - 5, newsList.length).reverse()
             li.side-news__item
                 .side-news__date
                     i.material-icons.side-news__calendar calendar_today
-                    span.span= news.date
+                    span.span= moment(news.dateNews).format('DD.MM.YYYY')
                 a.side-news__link(href=`/news-feed/${news.id}`)= news.title
                 .side-news__description= news.description
