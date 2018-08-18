@@ -3,11 +3,11 @@ const path = require('path');
 const loger = require('morgan');
 
 const config = require('./shared/config');
-const { error } = require('./shared/middleware');
-const menu = require('./shared/data/menu.json');
-
+const { error, items } = require('./shared/middleware');
+const { connection } = require('./shared/service/db');
 const main = require('./main');
 const admin = require('./admin');
+const menu = require('./shared/data/menu.json');
 
 const server = express();
 
@@ -24,6 +24,11 @@ server.use(express.static(config.paths.public));
 server.use(express.urlencoded({ extended: false }));
 server.use(express.json());
 server.use(loger('dev'));
+
+server.use(
+    items.allNews, 
+    items.publishedNews
+);
 
 server.use('/', main);
 server.use('/admin', admin);

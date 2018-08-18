@@ -1,3 +1,4 @@
 module.exports = {
-    error: require('./error')
+    error: require('./error'),
+    items: require('./items')
 }
