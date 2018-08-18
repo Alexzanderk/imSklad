@@ -1,4 +1,3 @@
-const newsList = require('../../shared/data/news.json');
 const categories = require('../../shared/data/category.json');
 
 module.exports = {
@@ -6,7 +5,6 @@ module.exports = {
     showAdminCatalogPage(req, res) {
         res.render('catalog', {
             id: 'admin-catalog',
-            newsList,
             categories
         })
     },
@@ -15,7 +13,6 @@ module.exports = {
     showAdminCategoryCreatePage(req, res) {
         res.render('catalog/form-category', {
             id: 'admin-catalog',
-            newsList,
             categories
         })
     },
@@ -24,7 +21,6 @@ module.exports = {
     showAdminCategoryProps(req, res) {
         res.render('catalog/form-props', {
             id: 'admin-catalog',
-            newsList,
             categories
         })
     },
@@ -33,7 +29,6 @@ module.exports = {
     showAdminProductCreatePage(req, res) {
         res.render('catalog/form', {
             id: 'admin-catalog',
-            newsList,
             categories
         })
     }
