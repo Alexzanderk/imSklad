@@ -12,6 +12,7 @@ module.exports = {
     entry: {
         app: './src/js/index.js',
         google: './src/js/functions/googleMaps.js',
+        style: './src/styles/index.sass',
     },
 
     output: {

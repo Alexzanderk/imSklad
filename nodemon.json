@@ -1,0 +1,28 @@
+{
+    "restartable": "rs",
+    "ignore": [
+      ".git",
+      "node_modules/**/node_modules",
+      "node_modules/**/*.*",
+      "public/**/*",
+      "data/**/order.json",
+      "views/**/*",
+      "src/**/*.*"
+    ],
+    "verbose": false,
+    "execMap": {
+      "js": "node"
+    },
+    "events": {
+    },
+    "watch": [
+      "admin/",
+      "main/",
+      "shared/",
+      "index.js"
+    ],
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "ext": "js json"
+  }
