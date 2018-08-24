@@ -37,8 +37,10 @@ module.exports = {
     //POST /admin/news/create
     createNews(req, res) {
         let newsCreate = Object.assign({}, req.body, {
-            published: (req.body.published === 'on') ? true : false
+            published: (req.body.published === 'on') ? true : false,
+            image: req.file ? req.file.filename : ''
         });
+        console.log(req.file);
 
         News.create(newsCreate)
             .then(news => {
@@ -57,13 +59,15 @@ module.exports = {
     //POST /admin/news/:idNews/edit
     updateNews(req, res, next) {
         let newsUpdate = Object.assign({}, req.body, {
-            published: (req.body.published === 'on') ? true : false
+            published: (req.body.published === 'on') ? true : false,
+            image: req.file ? req.file.filename : req.currentNews.image
         });
+        
         News.findOneAndUpdate({
                 _id: req.params.newsId
             }, newsUpdate)
             .then(() => res.redirect('/admin/news?page=1&limit=10'))
-            .catch(err => next(err))
+            .catch(err => next(err));
     },
 
     showNewsDelete(req, res) {

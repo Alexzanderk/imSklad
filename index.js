@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const loger = require('morgan');
+const browserSync = require('browser-sync');
 
 const config = require('./shared/config');
 const { error, items } = require('./shared/middleware');
@@ -26,7 +27,7 @@ server.use(express.json());
 server.use(loger('dev'));
 
 server.use(
-    items.allNews, 
+    items.allNews,
     items.publishedNews
 );
 
@@ -36,4 +37,15 @@ server.use('/admin', admin);
 server.use(error.notFound);
 server.use(server.get('env') === 'development' ? error.development : error.production);
 
-server.listen(config.port,() => console.log(`Start server on port ${config.port}`));
+server.listen(config.port, () => {
+    console.log(`Start server on localhost:${config.port}`);
+
+    // browserSync({
+    //     proxy: 'localhost:' + config.port,
+    //     files: ['public/**/*.{js, css}', '/shared/public/**/*.{js, css}'],
+    //     startPath: '/admin/news?page=1&limit=10'
+    // });
+
+    // browserSync.watch('./shared/public/**/*').on('change', browserSync.reload);
+
+});

@@ -6,6 +6,7 @@ const routers = require('./routers');
 
 const admin = express();
 
+
 admin.set('views', path.join(__dirname, 'views'));
 admin.set('view engine', 'pug');
 

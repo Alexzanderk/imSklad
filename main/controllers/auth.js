@@ -5,7 +5,7 @@ module.exports = {
             id: 'login',
         });
     },
-    
+
     //GET /news
     registration(req, res) {
         res.render('reg', {

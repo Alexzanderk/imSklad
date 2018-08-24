@@ -26,7 +26,7 @@ mixin input(name, value)
     else if attributes.type === 'file'
         span.form-row.form-row--file(class=attributes.class)
             p.label-name #{ value ? 'Фото' : (attributes.accept === '.pdf') ? 'Загрузить файл:' : 'Загрузить фото:'}
-            p.file-name
+            p.file-name Файл не выбран
             input.input.input--file(name=name)&attributes(attributes)
             -console.log(value)
             label.row__label.row__label--file(class=(!value.includes('undefined') ? 'row__label--photo' : '') for=attributes.id) #{ !value.includes('undefined') ? '' : (attributes.accept === '.pdf') ? 'Загрузить файл' : 'Загрузить фото'}
