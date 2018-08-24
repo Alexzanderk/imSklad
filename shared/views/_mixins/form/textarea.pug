@@ -1,5 +1,5 @@
 mixin textarea(name, value)
-    span.form__row(class=attributes.class)
+    span.form-row(class=attributes.class)
         if attributes.placeholder
             label.row__label(for=attributes.id)= `${attributes.placeholder}:`
         textarea.textarea(name=name)&attributes(attributes)= value

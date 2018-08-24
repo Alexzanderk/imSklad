@@ -26,13 +26,14 @@ mixin input(name, value)
     else if attributes.type === 'file'
         span.form-row.form-row--file(class=attributes.class)
             p.label-name #{ value ? 'Фото' : (attributes.accept === '.pdf') ? 'Загрузить файл:' : 'Загрузить фото:'}
-            input.input.input--file(name=name value=value)&attributes(attributes)
-            label.row__label.row__label--file(class=(value ? 'row__label--photo' : '') for=attributes.id) #{ value ? '' : (attributes.accept === '.pdf') ? 'Загрузить файл' : 'Загрузить фото'}
-                if value
-                    img.ad-product-img(src=image  alt=""  srcset="")
+            p.file-name
+            input.input.input--file(name=name)&attributes(attributes)
+            -console.log(value)
+            label.row__label.row__label--file(class=(!value.includes('undefined') ? 'row__label--photo' : '') for=attributes.id) #{ !value.includes('undefined') ? '' : (attributes.accept === '.pdf') ? 'Загрузить файл' : 'Загрузить фото'}
+                if !value.includes('/upload/undefined')
+                    img.ad-product-img(src=value  alt=""  srcset="")
 
 
-  
     else
         span.form-row(class=attributes.class)
             if attributes.placeholder && !attributes.hidden

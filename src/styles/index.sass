@@ -1,69 +1,71 @@
 html
-	background-color: #3c3b3d
-body
-	background: #fff
-html, body
-	height: 100%
-	padding: 0
-	margin: 0
-	font-family: Roboto
+    background-color: #3c3b3d
 
-	body
-	display: flex
-	flex-flow: column
+body
+    background: #fff
+
+html, body
+    height: 100%
+    padding: 0
+    margin: 0
+    font-family: Roboto
+
+    body
+
+    display: flex
+    flex-flow: column
+
 section
-	flex: 1 0 auto
-	background-color: #fff
+    flex: 1 0 auto
+    background-color: #fff
 
 footer
-	flex: 0 0 auto
+    flex: 0 0 auto
 
 .container
-	max-width: 1200px
-	margin: 0 auto
+    max-width: 1200px
+    margin: 0 auto
 
 $hovColor: #f7cd78
 
 $phone: max-width 599px
+
 //LIBS
 
-@import 'material-components-web/material-components-web'
-@import 'breakpoint-sass/stylesheets/_breakpoint.scss'
+@import material-components-web/material-components-web
+@import breakpoint-sass/stylesheets/_breakpoint.scss
 
 //LAYOUT
 
-@import 'components/grid-layout.sass'
-
-
+@import components/grid-layout.sass
 
 //PAGES
 
-@import './pageAuth.sass'
-@import './pageHome.sass'
-@import './page404.sass'
-@import './pageNewsFeed.sass'
-@import './pageNews.sass'
-@import './pageAbout.sass'
-@import './pageContacts.sass'
-@import './pageProduct.sass'
-@import './pagesAdmin.sass'
+@import ./pageAuth.sass
+@import ./pageHome.sass
+@import ./page404.sass
+@import ./pageNewsFeed.sass
+@import ./pageNews.sass
+@import ./pageAbout.sass
+@import ./pageContacts.sass
+@import ./pageProduct.sass
+@import ./pagesAdmin.sass
 
+//COMPONENTS
 
-//COMPONENTS	
-	
-@import './components/carousel.scss'
-@import './components/card.sass'
-@import './components/form/index.sass'
-@import './components/header'
-@import './components/footer.sass'
-@import './components/fixedButton.sass'
-@import './components/pagination.sass'
-@import './components/varibles.sass'
-@import './components/nav-tabs.sass'
-
+@import ./components/carousel.scss
+@import ./components/card.sass
+@import ./components/form/index.sass
+@import ./components/header
+@import ./components/footer.sass
+@import ./components/fixedButton.sass
+@import ./components/pagination.sass
+@import ./components/varibles.sass
+@import ./components/nav-tabs.sass
 
 #aside
-	+mdc-drawer-scrim-color(#000, .85)
-	// +mdc-drawer-fill-color(#555)
-	+mdc-drawer-ink-color(#ccc)
-	+mdc-drawer-fill-color-accessible(#888)
+    +mdc-drawer-scrim-color(#000, 0.85)
+
+    // +mdc-drawer-fill-color(#555)
+    +mdc-drawer-ink-color(#ccc)
+    +mdc-drawer-fill-color-accessible(#888)

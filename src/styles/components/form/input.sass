@@ -2,9 +2,11 @@
     display: flex
     flex-flow: column
     margin: 5px 0
+
 .row__label
     margin: 5px 0
     font-size: 15px
+
 .input
     color: #2c3e50
     outline: none
@@ -12,12 +14,19 @@
     font-size: 14px
     background: #ecf0f1
     border: 1px solid #ddd
+
     &[disabled]
         color: #aaa
 
 // file
 
 .form-row--file
+    position: relative
+    .file-name
+        text-align: center
+        margin-top: 0
+        font-weight: 800
+        font-size: 14px
     .input--file[type='file']
         width: 0.1px
         height: 0.1px
@@ -25,6 +34,7 @@
         overflow: hidden
         position: absolute
         z-index: -1
+
         & + .row__label--file
             font-size: 16px
             font-weight: 500
@@ -37,34 +47,35 @@
             max-width: 150px
             text-align: center
             text-transform: uppercase
-            transition: all .3s ease
+            transition: all 0.3s ease
+
         & + .row__label--photo
             position: relative
+
             .ad-product-img
                 width: 150px
-                transition: all .3s ease
+                transition: all 0.3s ease
 
-
-        &:focus + .row__label--file, 
+        &:focus + .row__label--file,
         & + .row__label--file:hover
-            background: rgba(#000, .1)
+            background: rgba(#000, 0.1)
 
-
-        &:focus + .row__label--photo, 
+        &:focus + .row__label--photo,
         & + .row__label--photo:hover
             &:before
-                content: ''
+                content: ""
                 position: absolute
                 top: 0
                 bottom: 0
                 left: 0
                 right: 0
                 z-index: 1
-                background: rgba(#000, .5)
+                background: rgba(#000, 0.5)
                 border: none
-                transition: all .3s ease
+                transition: all 0.3s ease
+
             &:after
-                content: 'Добавить/Заменить'
+                content: "Добавить/Заменить"
                 position: absolute
                 top: 50%
                 left: 50%
@@ -72,17 +83,16 @@
                 font-size: 12px
                 z-index: 1
                 color: #fff
-                transition: all .3s ease
+                transition: all 0.3s ease
 
             .ad-product-img
                 transform: scale(1.1)
-                transition: all .3s ease
-        
+                transition: all 0.3s ease
 
-.row__label--photo.row__label--photo.row__label--photo.row__label--photo.row__label--photo.row__label--photo.row__label--photo.row__label--photo.row__label--photo    
+.row__label--photo.row__label--photo.row__label--photo.row__label--photo.row__label--photo.row__label--photo.row__label--photo.row__label--photo.row__label--photo
     padding: 0
     overflow: hidden
-
+    border: 0
 
 // checkbox
 
@@ -96,8 +106,10 @@
     flex-flow: row
     align-items: center
     align-content: center
+
     .label-name
         margin-left: 25px
+
         // position: relative
         // z-index: 5
 
@@ -110,54 +122,53 @@
         left: 0
         transform: translate(0%, -50%)
         margin: 0
-        transition: all .3s ease
+        transition: all 0.3s ease
         cursor: pointer
         width: 100%
+
         %ico-checkbox
             font-size: 25px
             padding: 0
             margin: 0
             display: block
-        
+
         .fa-minus-square, .fa-square
             @extend %ico-checkbox
+
             color: red
+
         .fa-plus-square, .fa-check-square
             @extend %ico-checkbox
+
             display: none
             color: green
 
     .input[type='checkbox']:checked + .row__label
         .fa-minus-square, .fa-square
             display: none
+
         .fa-plus-square, .fa-check-square
             display: block
 
-
-
-
 // Date
-
 
 .form-row--date
     width: 140px
     font-family: Roboto
+
     .row__label
         .input--date
 
-    .input--date[type='date']::-webkit-clear-button 
+    .input--date[type='date']::-webkit-clear-button
         display: none
 
-
-    .input--date[type='date']::-webkit-inner-spin-button  
+    .input--date[type='date']::-webkit-inner-spin-button
         display: none
 
-
-    .input--date[type='date']::-webkit-calendar-picker-indicator 
+    .input--date[type='date']::-webkit-calendar-picker-indicator
         color: #2c3e50
 
-
-    .input--date[type='date'] 
+    .input--date[type='date']
         appearance: none
         color: #95a5a6
         font-family: Roboto
@@ -169,7 +180,6 @@
         display: inline-block !important
         visibility: visible !important
 
-
-    .input--date[type='date'], focus 
+    .input--date[type='date'], focus
         color: #2c3e50
         box-shadow: none
