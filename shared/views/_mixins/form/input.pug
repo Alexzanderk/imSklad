@@ -28,8 +28,7 @@ mixin input(name, value)
             p.label-name #{ value ? 'Фото' : (attributes.accept === '.pdf') ? 'Загрузить файл:' : 'Загрузить фото:'}
             p.file-name Файл не выбран
             input.input.input--file(name=name)&attributes(attributes)
-            -console.log(value)
-            label.row__label.row__label--file(class=(!value.includes('undefined') ? 'row__label--photo' : '') for=attributes.id) #{ !value.includes('undefined') ? '' : (attributes.accept === '.pdf') ? 'Загрузить файл' : 'Загрузить фото'}
+            label.row__label.row__label--file(class=(!value.includes('undefined') ? 'row__label--photo' : 'input-btn') for=attributes.id) #{ !value.includes('undefined') ? '' : (attributes.accept === '.pdf') ? 'Загрузить файл' : 'Загрузить фото'}
                 if !value.includes('/upload/undefined')
                     img.ad-product-img(src=value  alt=""  srcset="")
 
