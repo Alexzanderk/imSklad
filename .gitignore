@@ -5,6 +5,7 @@ public/img/ico/
 public/img/bg/
 public/img/icons/
 main/views/admin/
+shared/public/
 
 # dotenv environment variables file
 .env
