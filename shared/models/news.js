@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const moment = require('moment');
 
 const Schema = mongoose.Schema;
 
@@ -8,7 +9,7 @@ const News = new Schema({
     description: { type: String},
     fullDescription: { type: String},
     published: { type: Boolean, default: false },
-    dateNews: { type: Date, default: Date.now }
+    date: { type: Date, default: Date.now, get: value => moment(value) }
 }, {
     toObject: { getters: true, virtuals: true },
     toJSON: { versionKey: false, getters: true },
