@@ -7,12 +7,10 @@ const glob = require('glob').sync;
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-
 module.exports = {
     entry: {
         app: './src/js/index.js',
-        google: './src/js/functions/googleMaps.js',
-        style: './src/styles/index.sass',
+        google: './src/js/functions/googleMaps.js'
     },
 
     output: {
@@ -21,55 +19,54 @@ module.exports = {
 
     module: {
         rules: [{
-                test: /\.js$/,
-                use: {
-                    loader: 'babel-loader',
-                    query: {
-                        presets: ['es2015']
-                    }
+            test: /\.js$/,
+            use: {
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015']
                 }
-            }, {
-                test: /\.(png|jpg|svg)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: './shared/public/',
-                        emitFile: true,
-                        useRelativePath: true
-                    }
-                }]
+            }
+        }, {
+            test: /\.(png|jpg|svg)$/,
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: './shared/public/',
+                    emitFile: true,
+                    useRelativePath: true
+                }
+            }]
+        },
+        {
+            test: /\.s[ca]ss$/,
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    name: 'app.css',
+                    outputPath: './shared/public/style/'
+                },
             },
             {
-                test: /\.s[ca]ss$/,
-                use: [{
-                        loader: 'file-loader',
-                        options: {
-                            name: 'app.css',
-                            outputPath: './shared/public/style/'
-                        },
-                    },
-                    {
-                        loader: 'extract-loader'
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    },
-                    {
-                        loader: 'resolve-url-loader'
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            includePaths: ['./node_modules'],
-                            sourceMap: true
-                        }
-                    },
-                ]
+                loader: 'extract-loader'
             },
+            {
+                loader: 'css-loader',
+                options: {
+                    sourceMap: true
+                }
+            },
+            {
+                loader: 'resolve-url-loader'
+            },
+            {
+                loader: 'sass-loader',
+                options: {
+                    sourceMap: true
+                }
+            },
+            ]
+        },
 
         ]
     }
