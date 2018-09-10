@@ -11,7 +11,8 @@ title Vulkan sklad
 
 link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
 link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons', )
-link(rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css")
+link(rel="stylesheet" href="https://unpkg.com/material-components-web@0.36.1/dist/material-components-web.min.css")
+//- link(rel="stylesheet" href="/lib/material-components-web/dist/material-components-web.min.css")
 link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.2.0/css/all.css', integrity='sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ', crossorigin='anonymous')
 
 
@@ -21,10 +22,16 @@ link(rel="stylesheet", href="/style/app.css")
 script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDh2FS9_k84QkJbdwrSSXVdCeC_JwytW0k' async)
 if id === 'main-page' || 'page-contacts'
     script(src='/js/google.js' defer)
+script(src='https://unpkg.com/axios/dist/axios.min.js')
+
+if id.startsWith('admin-')
+    script(src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=dzwlatko7c7qc0hrj66wj99p9s0lqpq1f1ea6pw5t47geqo5')
+
 
 script(type='text/javascript', src='/js/app.js' defer)
 
-script(src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js")
+//- script(src="/lib/material-components-web/dist/material-components-web.min.js")
+script(src="https://unpkg.com/material-components-web@0.36.1/dist/material-components-web.min.js")
 
 
 <!--[if lt IE 9]>
