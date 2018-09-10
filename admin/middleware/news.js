@@ -1,13 +1,13 @@
 const { News } = require('../../shared/models');
 
 module.exports = {
-    getNewsId(req, res, next, newsId) {
+    get(req, res, next, newsId) {
         News.findOne({_id: newsId})
             .then(currentNews => {
                 req.currentNews = currentNews;
                 res.locals.currentNews = currentNews;
-                next()
+                next();
             })
             .catch(err => next(err));
     }
-}
+};

@@ -4,4 +4,4 @@ module.exports = {
     catalog: require('./catalog'),
     company: require('./company'),
     client: require('./client')
-}
+};

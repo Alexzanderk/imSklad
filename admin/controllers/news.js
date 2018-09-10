@@ -1,14 +1,12 @@
 const categories = require('../../shared/data/category.json');
 
-const {
-    News
-} = require('../../shared/models');
+const { News } = require('../../shared/models');
 
 module.exports = {
     // GET /admin/news
     showAdminNewsPage(req, res, next) {
         let { page = 0, limit = 0, skip = page * limit - limit} = req.query;
-        let pagination = { page, limit, skip }
+        let pagination = { page, limit, skip };
         News.find()
             .sort({dateNews: -1})
             .skip(Number(skip))
@@ -21,7 +19,7 @@ module.exports = {
                     categories
                 });
             })
-            .catch(err => next(err))
+            .catch(err => next(err));
     },
 
     //GET /admin/news/create
@@ -31,7 +29,7 @@ module.exports = {
             id: 'admin-news-create',
             news: new News(),
             categories
-        })
+        });
     },
 
     //POST /admin/news/create
@@ -40,21 +38,20 @@ module.exports = {
             published: (req.body.published === 'on') ? true : false,
             image: req.file ? req.file.filename : ''
         });
-        console.log(req.file);
 
         News.create(newsCreate)
-            .then(news => {
-                res.redirect('/admin/news?page=1&limit=10')
+            .then( () => {
+                res.redirect('/admin/news?page=1&limit=10');
             });
     },
 
     //GET /admin/news/:idNews/edit
-    showNewsEdit(req, res, next) {
+    showNewsEdit(req, res) {
         res.render('news/form', {
             id: 'admin-news-edit',
             news: req.currentNews,
             categories
-        })
+        });
     },
     //POST /admin/news/:idNews/edit
     updateNews(req, res, next) {
@@ -63,18 +60,29 @@ module.exports = {
             image: req.file ? req.file.filename : req.currentNews.image
         });
         
-        News.findOneAndUpdate({
-                _id: req.params.newsId
-            }, newsUpdate)
+        News.findOneAndUpdate({ _id: req.params.newsId }, newsUpdate)
             .then(() => res.redirect('/admin/news?page=1&limit=10'))
             .catch(err => next(err));
     },
 
+    //GET /admin/news/:idNews/delete
     showNewsDelete(req, res) {
         res.render('news/delete', {
             id: 'admin-news-delete',
-            categories
-        })
+        });
+    },
+
+    //POST /admin/news/:idNews/delete
+    deleteNews(req, res) {
+        console.log(req.body);
+        if (req.body.confirm) {
+            req.currentNews.remove()
+                .then(() => res.redirect('/admin/news?page=1&limit=10'))
+                .catch(console.error);
+        } else {
+            res.redirect('/admin/news?page=1&limit=10')
+        }
+
     },
 
     fakes(req, res) {
@@ -86,12 +94,11 @@ module.exports = {
                 description: `Fake description ${index}`,
                 fullDescription: `full Description ${index}`,
                 published: true
-
-            })
+            });
             fake.save();
         }
         
         res.redirect('/admin/news?page=1&limit=10');
 
     }
-}
+};

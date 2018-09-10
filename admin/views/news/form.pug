@@ -12,7 +12,7 @@ block content
                 +input('title', news.title)(type='text' name='title' placeholder='Название новости')
                 +textarea('description', news.description)(type='textarea' rows=7 placeholder='Краткое описание')
                 +textarea('fullDescription', news.fullDescription)(type='textarea' rows=20 placeholder='Полное описание')
-                +input('dateNews', (!news.dateNews) ? news.dateNews : moment(news.dateNews).format('YYYY-MM-DD'))(type='date')
+                +input('date', (!news.date) ? news.date : news.date.format('YYYY-MM-DD'))(type='date')
                 +input('published', news.published)(type='checkbox' class='checkbox' placeholder='Опубликовано' id='checkbox-published')
                 
                 .btn-controls

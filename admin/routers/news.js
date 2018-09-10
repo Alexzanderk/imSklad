@@ -15,10 +15,9 @@ const storage = multer.diskStorage({
     }
 });
 
-
 const upload = multer({storage: storage}).single('image');
 
-router.param('newsId', newsId.getNewsId);
+router.param('newsId', newsId.get);
 
 router.get('/', news.showAdminNewsPage);
 router.route('/create')
@@ -27,8 +26,10 @@ router.route('/create')
 router.route('/:newsId/edit')
     .get(news.showNewsEdit)
     .post(upload, news.updateNews);
-router.get('/:newsId/delete', news.showNewsDelete);
+router.route('/:newsId/delete')
+    .get(news.showNewsDelete)
+    .post(news.deleteNews);
 
-router.get('/fakes/:num', news.fakes)
+router.get('/fakes/:num', news.fakes);
 
 module.exports = router;
