@@ -1,3 +1,5 @@
 module.exports = {
-    newsId: require('./news')
-}
+    newsId: require('./news'),
+    categoryId: require('./category'),
+    productId: require('./product')
+};
