@@ -3,6 +3,8 @@ const router = new Router();
 
 const { company } = require('../controllers');
 
-router.get('/', company.showAdminCompanyPage);
+router.route('/')
+    .get(company.showAdminCompanyPage)
+    .post(company.addInformation);
 
 module.exports = router;

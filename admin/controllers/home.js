@@ -6,6 +6,6 @@ module.exports = {
         res.render('index', {
             id: 'admin-main',
             categories
-        })
+        });
     }
-}
+};
