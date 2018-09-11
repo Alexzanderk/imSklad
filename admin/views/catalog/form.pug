@@ -7,7 +7,7 @@ block content
     h1.admin-title Создание продукта
     .form
         .btn-controls
-            +btn('Сохранить')(type='submit')
+            +btn('Сохранить')(type='submit' form='adminCreateProduct')
             +btn('Сбросить все')(type='reset')
             +btn('Назад')(href='javascript:history.back()')
     .nav-tabs
@@ -24,35 +24,39 @@ block content
        
        
        
-        form.form(enctype="multipart/form-data" method="post")#adminCreateProduct
+        form.form(method="post" enctype='multipart/form-data')#adminCreateProduct
             
             ul.tabs__list
                 li(data-list='1').tabs__item.tabs__item--active
                     .form-group.form-create-product-grid
-                        +input('file', image)(type='file' id='uploadimg' accept='image/')
-                        +select('category', {categories})(placeholder='Выберите категорию' class='form-row--select')
-                        +input('name')(type='text' placeholder='Название продукта')
-                        +input('alias')(type='text' placeholder='Alias')
-                        +input('model')(type='text' placeholder='Модель продукта')
-                        +input('article')(type='text' placeholder='Артикул продукта')
-                        +input('brand')(type='text' placeholder='ТМ')
-                        +input('price')(type='text' placeholder='Стоимость')
-                        +input('priceDollar')(type='text' placeholder='Стоимость в валюте')
+                        +input('image', product.img)(type='file' id='uploadimg' accept='image/')
+                        +select('category', product.category)(placeholder='Выберите категорию' class='form-row--select')
+                        +input('name', product.name)(type='text' placeholder='Название продукта')
+                        +input('alias', product.alias)(type='text' placeholder='Alias')
+                        +input('model', product.model)(type='text' placeholder='Модель продукта')
+                        +input('article', product.article)(type='text' placeholder='Артикул продукта')
+                        +input('brand', product.brand)(type='text' placeholder='ТМ')
+                        +input('price', product.price)(type='text' placeholder='Стоимость')
+                        +input('priceUSD', product.priceUSD)(type='text' placeholder='Стоимость в валюте')
                         .product-actions
-                            +input('price')(type='text' placeholder='Акционная цена')
-                            +input('price')(type='checkbox' placeholder='Топ продаж' id='checkbox-top')
-                            +input('price')(type='checkbox' placeholder='Лучшее качество' id='checkbox-qualty')
-                            +input('price')(type='checkbox' placeholder='Лучшая цена' id='checkbox-price')
+                            +input('actionPrice', product.actionPricw)(type='text' placeholder='Акционная цена')
+                            +input('actionTop', 'no')(type='radio' placeholder='Не выбрано' id='checkbox-top')
+                            +input('actionTop', 'top')(type='radio' placeholder='Топ продаж' id='checkbox-top')
+                            +input('actionTop', 'b-quality')(type='radio' placeholder='Лучшее качество' id='checkbox-qualty')
+                            +input('actionTop', 'b-price')(type='radio' placeholder='Лучшая цена' id='checkbox-price')
                     .form-group.form-create-product-grid
-                        +input('file')(type='file' id='uploadimg' accept='.pdf')
+                        //- +input('file')(type='file' accept='.pdf')
 
                     
                 li(data-list='2').tabs__item
-                    +productProps(categories[0].props)
+                    .product-props
+                        ul.props__list
+                            if product.props[0]
+                                +productProps(product.props)
                 li(data-list='3').tabs__item
-                    +textarea('textarea')(rows=30 placeholder='Описание товара')
+                    +textarea('description', product.description)(rows=30 placeholder='Описание товара')
 
                 li(data-list='4').tabs__item
-                    +textarea('textarea')(rows=30 placeholder='Преимущества товара')
+                    +textarea('advantage', product.advantage)(rows=30 placeholder='Преимущества товара')
             
     

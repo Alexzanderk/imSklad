@@ -2,7 +2,10 @@ mixin menu(menuItems)
     ul.menu__list&attributes(attributes)
         each item in menuItems
             li.menu__item
-                a.menu__link( href=`${item.link}?page=1&limit=10`)= item.name
+                if item.link.includes('news')
+                    a.menu__link( href=`${item.link}?page=1&limit=10`)= item.name
+                else    
+                    a.menu__link( href=`${item.link}`)= item.name
 mixin logo()
     a(href="/" class="logo") Складская
         span.logo_yellow Техника
@@ -23,7 +26,10 @@ aside#aside.mdc-drawer.mdc-drawer--temporary.mdc-typography
         nav#icon-with-text-demo.mdc-drawer__content.mdc-list
             if admin == 'admin'
                 each item in menu.admin
-                    a.mdc-list-item(href=`${item.link}?page=1&limit=10`)= item.name
+                    if item.link.includes('news')
+                      a.mdc-list-item(href=`${item.link}?page=1&limit=10`)= item.name
+                    else
+                      a.mdc-list-item(href=`${item.link}`)= item.name
             else
                 each item in menu.main
                     a.mdc-list-item(href=`${item.link}`)= item.name

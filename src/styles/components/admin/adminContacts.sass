@@ -1,0 +1,35 @@
+#adminContacts
+    display: flex
+    flex-flow: row wrap
+
+    .add-elements
+        flex: 1 0 100%
+
+    .telephones
+        flex: 1 0 calc(50% - 5px/2)
+        margin-right: calc(5px/2)
+
+    .emails
+        flex: 1 0 calc(50% - 5px/2)
+        margin-left: calc(5px/2)
+
+    .adress
+        flex: 1 0 100%
+
+    .form-row
+        position: relative
+
+        &:hover .deleteInputButton
+            opacity: 1
+
+        .input
+
+        .deleteInputButton
+            position: absolute
+            top: 50%
+            right: 10px
+            transform: translate(0, -50%)
+            display: block
+            opacity: 0
+
+            .ico-delete

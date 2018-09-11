@@ -1,23 +1,27 @@
 extends /_layout
+include ../_mixins/index.pug
 
 block content
     h1.admin-title Создание свойств категории
 
     form.form(method="post")#adminCategoryProps
         fieldset.fieldset
-            legend.legend= categories[0].categoryName
+            legend.legend= category.name
             .btn-controls
-                +btn('Добавть строку')(href='#')
-                +btn('Удалить все строки')(href='#')
+                +btn('Добавть строку')(href='#' class='addRowButton')
+                +btn('Удалить все строки')(href='#' class='deleteAllRowsButton')
                 +btn('Сбросить все')(type='reset')
             .props
                 ul.props__list
-                    li.props__item
-                        +input('name')(type='text' placeholder='name - имя поля для bd')
-                        +input('title')(type='text' placeholder='title - название свойства для таблицы')
-                        +input('unit')(type='text' placeholder='ед.измерения')
-                        a(href="#").props__link.props__link--delete 
-                            i.far.fa-trash-alt.ico-delete
+                    if category.props.length
+                        +props(category.props)
+                    else
+                        li.props__item
+                            +input('_id')(type='text' placeholder='name - имя поля для bd')
+                            +input('propsName')(type='text' placeholder='title - название свойства для таблицы')
+                            +select('propsUnit', units)(placeholder='ед.измерения' class='form-row--select')
+                            a(href="#").props__link.props__link--delete.deleteRowButton 
+                                i.far.fa-trash-alt.ico-delete
             .btn-controls
-                +btn('Сохранить')(type='submit')
+                +btn((category.props.length) ? 'Сохранить' : 'Создать')(type='submit')
                 +btn('Назад')(href='javascript:history.back()')

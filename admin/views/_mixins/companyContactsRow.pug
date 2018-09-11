@@ -1,0 +1,7 @@
+mixin companyContactsRow(array)
+    if array.length > 1
+        each element in array.slice(1)
+            span.form-row
+                input.input(value=element)&attributes(attributes)
+                a.input__link.input__link--delete.deleteInputButton(href='#')
+                    i.far.fa-trash-alt.ico-delete

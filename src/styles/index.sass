@@ -32,40 +32,37 @@ $phone: max-width 599px
 
 //LIBS
 
-@import material-components-web/material-components-web
-@import breakpoint-sass/stylesheets/_breakpoint.scss
+@import 'breakpoint-sass/stylesheets/_breakpoint.scss'
 
 //LAYOUT
 
-@import components/grid-layout.sass
+@import 'components/grid-layout.sass'
 
 //PAGES
 
-@import ./pageAuth.sass
-@import ./pageHome.sass
-@import ./page404.sass
-@import ./pageNewsFeed.sass
-@import ./pageNews.sass
-@import ./pageAbout.sass
-@import ./pageContacts.sass
-@import ./pageProduct.sass
-@import ./pagesAdmin.sass
+@import './pageAuth.sass'
+@import './pageHome.sass'
+@import './page404.sass'
+@import './pageNewsFeed.sass'
+@import './pageNews.sass'
+@import './pageAbout.sass'
+@import './pageContacts.sass'
+@import './pageProduct.sass'
+@import './pagesAdmin.sass'
 
 //COMPONENTS
 
-@import ./components/carousel.scss
-@import ./components/card.sass
-@import ./components/form/index.sass
-@import ./components/header
-@import ./components/footer.sass
-@import ./components/fixedButton.sass
-@import ./components/pagination.sass
-@import ./components/varibles.sass
-@import ./components/nav-tabs.sass
+@import './components/carousel.scss'
+@import './components/card.sass'
+@import './components/form/index.sass'
+@import './components/header'
+@import './components/footer.sass'
+@import './components/fixedButton.sass'
+@import './components/pagination.sass'
+@import './components/varibles.sass'
+@import './components/nav-tabs.sass'
+@import './components/alerts.sass'
 
-#aside
-    +mdc-drawer-scrim-color(#000, 0.85)
 
-    // +mdc-drawer-fill-color(#555)
-    +mdc-drawer-ink-color(#ccc)
-    +mdc-drawer-fill-color-accessible(#888)
+.mce-tinymce.mce-container.mce-panel
+    box-shadow: none

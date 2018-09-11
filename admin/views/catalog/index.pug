@@ -20,6 +20,7 @@ block content
             li(data-list='1').tabs__item.tabs__item--active
                 .btn-controls
                     +btn('Добавить продукт')(href='/admin/catalog/product/create')
+                +showProducts(products)
 
             li(data-list='2').tabs__item
                 .btn-controls
@@ -27,12 +28,15 @@ block content
                 +categoryPropsList(categories)
                     
             li(data-list='3').tabs__item
-                form.form(method="post")#adminUnitList
+                form.form(method="post" action='/admin/catalog/units/create')#addUnitForm
                     .group-form
+                        +input('_id')(type='text' id='unitInput' placeholder='Добавить id')
+                        +input('name')(type='text' id='unitInput' placeholder='Добавить ед.измерения')
                         .btn-controls
-                            +btn('Добавить')(type='submit' id=btnUnitSave)
-                        +input('unit')(type='text' placeholder='Добавить ед.измерения')
+                            +btn('Сохранить')(type='submit')
+                
+                form.form(method="post" action='/admin/catalog/units/delete')#deleteUnitForm
                     .group-form
-                        +select('unitList', ['mm', 't', 'kg', 'C', 'Ah', 'V', 'A'])(multiple placeholder='Добавленные ед.измерения' class='form-row--select' size=10)
+                        +select('_id', units)(multiple placeholder='Добавленные ед.измерения' class='form-row--select' id='unitSelect' size=10)
                         .btn-controls
-                            +btn('Удалить')(type='submit' id=btnUnitDelete)
+                            +btn('Удалить')(type='submit' id='btnUnitDelete')

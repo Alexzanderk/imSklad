@@ -1,13 +1,11 @@
 extends /_layout
- 
+include ../_mixins/index.pug
 
 block content
     h1.admin-title Информация о компании
 
     
-
     .nav-tabs
-        
         ul.nav-tabs__list
             li(data-tab='1').nav-tabs__items.nav-tabs__items--active
                 a.nav-tabs__link(href="#") Компания
@@ -15,38 +13,37 @@ block content
                 a.nav-tabs__link(href="#") Контакты
             li(data-tab='3').nav-tabs__items
                 a.nav-tabs__link(href="#") Доставка
-        
-        ul.tabs__list
-
-            li(data-list='1').tabs__item.tabs__item--active
-
-                form.form(method="post")#adminCompany
-                    +input('companyName')(type='text' placeholder='Название компании')
-                    +textarea('about')(type='textarea' rows=20 placeholder='О нас')
-                    .btn-controls
-                        +btn('Сохранить')(type='submit')
-                        +btn('Назад')(href='javascript:history.back()')
+        form.form(method="post")#adminCompany
+            ul.tabs__list
+                li(data-list='1').tabs__item.tabs__item--active
+                    +input('name', company.name)(type='text' placeholder='Название компании')
+                    +textarea('about', company.about)(type='textarea' rows=20 placeholder='О нас')
 
 
-            li(data-list='2').tabs__item
-                form.form(method="post")#adminContanct
-                    .add-elements
-                        +select('name-input', ['Телефон', 'Email', 'Адрес'])(placeholder='Тип контакта' class='form-row--select')
-                        .btn-controls
-                            +btn('Добавить')(id='addElement')
-                    .telephones
-                        +input('contacts-tel')(type='tel' placeholder='Телефон' data-editable='true')
-                    .emails
-                        +input('contacts-email')(type='email' placeholder='Email')
-                    .adress
-                        +textarea('caontacts-adress')(placeholder='Adress' rows=3)
-                    .btn-controls
-                        +btn('Сохранить')(type='submit')
-                        +btn('Назад')(href='javascript:history.back()')
-            
-            li(data-list='3').tabs__item
-                form.form(method="post")#adminDelivery
-                    +textarea('delivery')(placeholder='Доставка' rows=25)
-                    .btn-controls
-                        +btn('Сохранить')(type='submit')
-                        +btn('Назад')(href='javascript:history.back()')
+                li(data-list='2').tabs__item
+                    #adminContacts
+                        .add-elements
+                            +select('field', [{name: 'Телефон', 
+                                            value: 'telephones'}, 
+                                            {name: 'Email', 
+                                            value: 'emails'}]
+                                    )(placeholder='Тип контакта' class='form-row--select' id='addElementInput')
+                            .btn-controls
+                                +btn('Добавить')(href='#' id='addElement')
+                        .telephones
+                            +input('tel', company.contacts ? company.contacts.tel[0] : '')(type='tel' placeholder='Телефон' data-editable='true')
+                            +companyContactsRow(company.contacts ? company.contacts.tel : false)(type='tel' placeholder='Телефон' name='tel')
+
+                        .emails
+                            +input('email', company.contacts ? company.contacts.email[0] : '')(type='email' placeholder='Email')
+                            +companyContactsRow(company.contacts ? company.contacts.email : false)(type='email' placeholder='Email' name='email')
+
+                        .adress
+                            +textarea('adress', company.contacts ? company.contacts.adress : '')(placeholder='Adress' rows=3)
+                
+
+                li(data-list='3').tabs__item
+                    +textarea('delivery', company.delivery)(placeholder='Доставка' rows=25)
+            .btn-controls
+                +btn('Сохранить')(type='submit')
+                +btn('Назад')(href='javascript:history.back()')

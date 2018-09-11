@@ -3,10 +3,12 @@ extends /_layout
 block content
     h1.admin-title Создание категории
 
-    form.form.form-add-category(method="post")#adminCreateCategory
-        fieldset.fieldset
-            //- legend.legend Форма создания
+    form.form.form-add-category(method="post" enctype='multipart/form-data')#adminCreateCategory
+        .group-form.add-category-layout
             .btn-controls
                 +btn('Сохранить')(type='submit')
-            +input('category')(type='text' placeholder='Имя категория')
-            +input('category')(type='text' placeholder='id - категории для продукта')
+                +btn('Назад')(href='javascript:history.back()')
+                
+            +input('image')(type='file' id='uploadimg' accept='image/')
+            +input('name')(type='text' placeholder='Имя категория')
+            +input('_id')(type='text' placeholder='id - категории для продукта')

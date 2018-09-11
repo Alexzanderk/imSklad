@@ -13,24 +13,24 @@ mixin pagination(totalNewsCount, limit, currentPage, num)
                 a.pagination__link(href=`/admin/news?page=1&limit=10`)
                     span.pagination__previous <
             if totalPages > 6 && rangeStart() > 1
-                li.pagination__item
+                li.pagination__item(class={'pagination__item_active': index == currentPage})
                     a.pagination__link(href=`/admin/news?page=1&limit=10`) 1
-                li.pagination__item
+                li.pagination__item(class={'pagination__item_active': index == currentPage})
                     a.pagination__link(data-eclipdse='true' disabled href='#') ...
             if totalPages <= 6
                 -for(let index = 1; index <= totalPages; index +=1)
-                    li.pagination__item
+                    li.pagination__item(class={'pagination__item_active': index == currentPage})
                         a.pagination__link(href=`/admin/news?page=${index}&limit=10`)= index
             else                        
                 -for(let index = rangeStart(); index <= rangeEnd(); index +=1)
-                    li.pagination__item
+                    li.pagination__item(class={'pagination__item_active': index == currentPage})
                         a.pagination__link(href=`/admin/news?page=${index}&limit=10`)= index
             
             if totalPages>6 && hasLast
                 if rangeEnd() + 1 !== totalPages
-                    li.pagination__item
+                    li.pagination__item(class={'pagination__item_active': index == currentPage})
                         a.pagination__link(data-eclipdse='true' disabled href='#') ...
-                li.pagination__item
+                li.pagination__item(class={'pagination__item_active': index == currentPage})
                     a.pagination__link(href=`/admin/news?page=${totalPages}&limit=10`)= totalPages
             
             li.pagination__item

@@ -24,4 +24,4 @@ mixin table(elements)
                         i.status-ico(class=(news.published) ? 'far fa-check-square' : 'far fa-square')
                     td.td.td-controls
                         +btn('Изменить')(href=`/admin/news/${news.id}/edit` action='edit')
-                        +btn('Удалить')(href=`/admin/news/delete` action='delete')
+                        +btn('Удалить')(href=`/admin/news/${news.id}/delete` action='delete')

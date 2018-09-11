@@ -1,0 +1,10 @@
+extends /_layout
+
+block content
+    form.form(method="post")#adminNewsDelete
+        fieldset.fieldset
+            legend.legend Точно удалить?
+            +input('confirm')(type='checkbox' class='checkbox' placeholder='Подтверждение' id='checkbox')
+            .btn-controls
+                +btn('Да')(type='submit')
+                +btn('Нет')(href='javascript:history.back()')

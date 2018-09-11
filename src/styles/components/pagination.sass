@@ -4,12 +4,20 @@
     list-style: none
     display: flex
     margin: 20px auto
+
 .pagination__item
     margin: 0 10px
+
+.pagination__item_active
+    border-bottom: 2px solid #777
+    .pagination__link
+        color: #777
+
 .pagination__link
     font-size: 18px
     text-decoration: none
     color: #000
+
     &:hover
         color: darken(blue, 2%)
 
@@ -19,5 +27,6 @@
     color: #999
     cursor: default
 
-.pagination__previous 
+.pagination__previous
+
 .pagination__next

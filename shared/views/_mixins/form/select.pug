@@ -1,21 +1,9 @@
 mixin select(name, values)
-    - let { categories } = values
-
-    if categories
-        span.form-row(class=attributes.class)
-            if attributes.placeholder
-                label.row__label(for=attributes.id)= `${attributes.placeholder}:`
-            select.select(name=name)&attributes(attributes)
-                option.option(value="no selected" disabled selected) Выбрать поле
-                each category in categories
-                    option.option(value=`${category.categoryName}`)= category.categoryName
-
-    else
-        
-        span.form-row(class=attributes.class)
-            if attributes.placeholder
-                label.row__label(for=attributes.id)= `${attributes.placeholder}:`
-            select.select(name=name)&attributes(attributes)
-                option.option(value="no selected" disabled selected) Выбрать поле
-                each value in values
-                    option.option(value=`${value}`)= value
+    span.form-row(class=attributes.class)
+        if attributes.placeholder
+            label.row__label(for=attributes.id)= `${attributes.placeholder}:`
+        select.select(name=name)&attributes(attributes)
+            option.option(value='no' selected disabled) Выбрать поле
+            each option in units || categories || values
+                option.option(value=(typeof option !== 'object') ? option : option.value || option.id 
+                            selected=(values == option || values == option.id) ? true : false)= (typeof option !== 'object') ? option : option.name

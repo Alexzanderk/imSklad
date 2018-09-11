@@ -3,6 +3,6 @@ mixin productProps(items)
         ul.props__list
             each item in items
                 li.product__item
-                    +input(`name`)(type='text', placeholder=`${item.title}, ${item.unit}` value=`${item.title}, ${item.unit}` disabled)
-                    +input(`unit`)(type='text', placeholder=`${item.title}, ${item.unit}` value=`${item.unit}` disabled hidden)
-                    +input('value')(type='text' placeholder='Значение')
+                    +input(`name`, item.name)(type='text', placeholder=`${item.name}, ${item.unit}` disabled)
+                    +input(`unit`, item.unit)(type='text', placeholder=`${item.name}, ${item.unit}` disabled hidden)
+                    +input('value', item.value)(type='text' placeholder='Значение')

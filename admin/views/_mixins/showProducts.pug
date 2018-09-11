@@ -1,0 +1,31 @@
+mixin showProducts(arryaProducts)
+    - let thead = ['#', 'name', 'category', 'publish', 'price', 'brand']
+
+    form.form#adminProductList(action="post")
+        
+        table.table
+            thead.thead
+                tr.tr
+                    each title in thead
+                        th.th= title
+
+            tbody.tbody
+                -let i = 0;
+                each prod in arryaProducts
+                    -i +=1
+                    tr.tr
+                        td.td= i
+                        td.td= `${prod.name} ${prod.model}`
+                        td.td= prod.category
+                        td.td
+                            +input('published', prod.published)(type='checkbox' id=`publishCheck${i}`)
+                        td.td
+                            +input('price', prod.price)(type='text')
+                        td.td= prod.brand
+                        td.td
+                            a(href=`/admin/catalog/product/${prod.id}/edit`).product__link
+                                i.fas.fa-edit.ico-edit
+                            a(href=`/admin/catalog/product/${prod.id}/delete`).product__link
+                                i.far.fa-trash-alt.ico-delete  
+        .btn-controls
+            +btn('Save')(href='/admin/catalog/product/update')
