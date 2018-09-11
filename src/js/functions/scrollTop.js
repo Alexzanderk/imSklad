@@ -13,7 +13,6 @@ export default class ScrollTop {
     toTop() {
         this.scroller = setTimeout(() => { this.toTop(); }, 1);
         this.marginY = this.marginY - this.speed;
-        console.log(`marg: ${this.marginY} --- speed: ${this.speed}`);
         if (this.marginY <= 0) { clearTimeout(this.scroller); }
 
         window.scroll(0, this.marginY);

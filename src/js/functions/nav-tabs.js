@@ -10,7 +10,6 @@ export default class NavTabs {
         event.preventDefault();
 
         const controlItem = this.parentNode;
-        console.log(controlItem);
         const controlItemAttribute = controlItem.getAttribute('data-tab');
         const tabsList = document.querySelectorAll('.tabs__item');
         const tabItem = Array.prototype.filter.call(tabsList, tab => tab.getAttribute('data-list') === controlItemAttribute);

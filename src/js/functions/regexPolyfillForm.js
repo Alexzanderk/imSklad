@@ -21,7 +21,6 @@ export const regexPolyfill = (function () {
     });
 
     function onInputFocus(ev) {
-        // console.log(classie);
         classie.add(ev.target.parentNode, 'input--filled');
     }
 

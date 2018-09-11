@@ -76,7 +76,6 @@ export default class Slider {
     touchStart(e) {
         this.touchParammetrs.xDown = e.touches[0].clientX;
         this.touchParammetrs.yDown = e.touches[0].clientY;
-        console.log(this.touchParammetrs);
     }
 
     touchMove(e) {
