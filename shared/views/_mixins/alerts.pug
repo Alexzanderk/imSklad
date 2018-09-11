@@ -1,0 +1,11 @@
+mixin alertError(msg)
+    if succes_msg[0] != undefined
+        .alert.alert-succes
+            p.alert__p= msg
+            i.fas.fa-times.ico-close
+
+            
+    if duplicate_msg[0] != undefined|| error[0] != undefined
+        .alert.alert-danger
+            p.alert__p= msg
+            i.fas.fa-times.ico-close

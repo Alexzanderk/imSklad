@@ -1,6 +1,6 @@
 const express = require('express');
-const path = require('path');
 const loger = require('morgan');
+const session = require('express-session');
 const browserSync = require('browser-sync');
 
 const config = require('./shared/config');
@@ -22,9 +22,17 @@ server.locals.version = config.version;
 server.locals.menu = menu;
 
 server.use(express.static(config.paths.public));
+server.use('/lib', express.static(config.paths.lib));
 server.use(express.urlencoded({ extended: false }));
 server.use(express.json());
 server.use(loger('dev'));
+server.use(session({
+    name: 'flashSession',
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true,
+    // cookie: { secure: true }
+}));
 
 server.use(
     items.allNews,
@@ -43,7 +51,7 @@ server.listen(config.port, () => {
     // browserSync({
     //     proxy: 'localhost:' + config.port,
     //     files: ['public/**/*.{js, css}', '/shared/public/**/*.{js, css}'],
-    //     startPath: '/admin/news?page=1&limit=10'
+    //     startPath: '/admin/catalog/'
     // });
 
     // browserSync.watch('./shared/public/**/*').on('change', browserSync.reload);
