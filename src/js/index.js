@@ -9,6 +9,7 @@ import adminAddRows from './functions/adminAddRows';
 import addElement from './functions/addElement';
 import addCategory from './functions/createProduct';
 import { alertNotification } from './functions/alert';
+import { checkUncheck } from './functions/checkboxUncheck';
 import style from '../styles/index.sass';
 
 
@@ -67,5 +68,5 @@ if (document.querySelector('textarea')) {
 }
 
 if (document.querySelector('#adminCreateProduct')) { addCategory(); }
-
 if (document.querySelector('.alert')) { alertNotification(); }
+if (document.querySelector('#adminProductList')) { checkUncheck(); }

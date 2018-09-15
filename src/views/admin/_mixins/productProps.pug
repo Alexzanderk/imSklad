@@ -1,8 +1,0 @@
-mixin productProps(items)
-    .product-props
-        ul.props__list
-            each item in items
-                li.product__item
-                    +input(`name`)(type='text', placeholder=`${item.title}, ${item.unit}` value=`${item.title}, ${item.unit}` disabled)
-                    +input(`unit`)(type='text', placeholder=`${item.title}, ${item.unit}` value=`${item.unit}` disabled hidden)
-                    +input('value')(type='text' placeholder='Значение')

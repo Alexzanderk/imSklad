@@ -1,4 +1,5 @@
 const { Category, Unit, Product } = require('../../shared/models');
+const _ = require('lodash');
 
 module.exports = {
     //GET /
@@ -211,6 +212,32 @@ module.exports = {
         } else {
             res.redirect('/admin/catalog/');
         }
+    },
+
+    productsEdit(req, res) {
+        const published = req.body.published;
+        const id = req.body._id;
+        const price = req.body.price;
+        const data =[];
+
+        for (let i = 0; i < id.length; i++) {
+            let obj = {};
+
+            obj.id = id[i];
+            obj.published = published[i];
+            obj.price = price[i];
+            data.push(obj);
+        }
+
+        Promise.all(data.map(el => {
+            let updateData = Object.assign({
+                published: el.published === '1' ? true : false,
+                price: el.price
+            });
+            return Product.update({ _id: el.id }, updateData, {upsert: true, multi: true});
+        }))
+            .then( () => res.redirect('/admin/catalog/'))
+            .catch(console.error);
     }
 
 };

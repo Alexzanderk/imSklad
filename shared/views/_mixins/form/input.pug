@@ -8,7 +8,7 @@ mixin input(name, value)
 
     else if attributes.type === 'checkbox'
         span.form-row.form-row--checkbox
-            input.input(name=name checked=value)&attributes(attributes)
+            input.input(name=name checked=value )&attributes(attributes)
             label.row__label(for=attributes.id)
                 //- i.fas.fa-minus-square
                 i.far.fa-square

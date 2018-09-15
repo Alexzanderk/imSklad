@@ -47,4 +47,7 @@ router.route('/product/:productId/delete')
     .get(catalog.showProductDeletePage)
     .post(catalog.deleteProduct);
 
+router.route('/products')
+    .post(catalog.productsEdit);
+
 module.exports = router;

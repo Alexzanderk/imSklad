@@ -1,9 +1,0 @@
-mixin sideNews(newsCatalog)
-    ul.side-news__list
-        each news in newsCatalog
-            li.side-news__item
-                .side-news__date
-                    i.material-icons.side-news__calendar calendar_today
-                    span.span= news.date
-                a.side-news__link(href=`${news.link}`)= news.title
-                .side-news__description= news.description
